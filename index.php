@@ -1,49 +1,52 @@
 <?php
-session_start();
+// Título y frases para la presentación
+$titulo = "Para Mi Amor ❤️";
+$frases = [
+    "Eres la razón por la que sonrío cada día. 😊",
+    "Tu amor es mi mayor tesoro. 💖",
+    "Cada momento contigo es un regalo. 🎁",
+    "Te amo hasta la luna y de regreso. 🌙",
+    "Eres mi sueño hecho realidad. 🌟",
+    "Contigo, el mundo es más bonito. 🌈",
+];
 
-// Conexión a la base de datos (ajusta los datos)
-$servername = "tu_servidor";
-$username = "tu_usuario";
-$password = "tu_contraseña";
-$dbname = "tu_base_de_datos";
+// Comienza a generar el HTML
+echo '<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>' . $titulo . '</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #ff69b4;
+        }
+        .corazon {
+            font-size: 50px;
+        }
+        .frase {
+            margin: 15px 0;
+            font-size: 20px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>' . $titulo . '</h1>
+    <div class="corazon">❤️❤️❤️</div>';
 
-$conn = new mysqli($servername, $username, $password,   
- $dbname);
-
-// Verificar conexión
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);   
-
+foreach ($frases as $frase) {
+    echo '<div class="frase">' . $frase . '</div>';
 }
 
-// Sanitizar datos
-$username = $_POST['username'];
-$password = $_POST['password'];
-
-$username = mysqli_real_escape_string($conn, $username);
-$password = mysqli_real_escape_string($conn, $password);   
-
-
-// Consultar la base de datos
-$sql = "SELECT * FROM usuarios WHERE username='$username'";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();   
-
-    // Verificar contraseña (usando password_verify)
-    if (password_verify($password, $row["password"])) {
-        $_SESSION["loggedin"] = true;
-        $_SESSION["username"] = $username;
-        header("location: dashboard.php");
-        exit;
-    } else {
-        echo "Contraseña incorrecta.";
-    }
-} else {
-    echo "Usuario no encontrado.";
-}
-
-$conn->close();   
-
+echo '<div class="corazon">❤️❤️❤️</div>
+</body>
+</html>';
 ?>
