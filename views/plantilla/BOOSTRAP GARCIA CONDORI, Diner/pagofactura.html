@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura de Pago - Tienda de Ropa Dragon Ball Z</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: hsl(0, 0%, 100%);
+            color: #fff;
+            padding-top: 20px;
+        }
+
+ 
+
+.invoice-container {
+    background-color: #004af8;
+    border-radius: 10px;
+    padding: 80px 20px 20px;
+    margin: auto;
+    max-width: 800px;
+    position: relative;
+}
+
+.logo-image {
+    max-width: 150px;
+    border-radius: 50%;
+    position: absolute;
+    top: -75px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translateX(-50%) scale(1);
+    }
+    50% {
+        transform: translateX(-50%) scale(1.1);
+    }
+    100% {
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+
+
+        .invoice-container h1, .invoice-container h2 {
+            color: #03eafe;
+        }
+
+        .invoice-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .customer-info, .invoice-details {
+            flex: 1;
+        }
+
+        .product-table {
+            background-color: #444;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .total-label {
+            font-weight: bold;
+        }
+
+        .total-amount {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #ffcc00;
+        }
+
+        .download-btn, .print-btn {
+            margin-right: 10px;
+        }
+
+        .download-btn {
+            background-color: hsl(107, 100%, 50%);
+            border-color: #ffcc00;
+        }
+
+        .download-btn:hover {
+            background-color: hsl(237, 100%, 50%);
+            border-color: hsl(0, 100%, 50%);
+        }
+
+        .print-btn {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        .print-btn:hover {
+            background-color: #218838;
+            border-color: #218838;
+        }
+
+        .return-btn {
+            background-color: #ffcc00;
+            border-color: #ffcc00;
+            color: #000;
+        }
+
+        .return-btn:hover {
+            background-color: #ff9900;
+            border-color: #ff9900;
+            color: #000;
+        }
+        .navbar {
+      background-color: hsl(142, 27%, 84%);
+    }
+    .navbar-brand img {
+        height: 70px;
+    width: 100%;
+      
+      object-fit: cover;
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      animation: border-pulse 2s infinite;
+    }
+
+    @keyframes border-pulse {
+      0% {
+        box-shadow: 0 0 10px rgba(9, 33, 247, 0.5);
+      }
+      25% {
+        box-shadow: 0 0 10px #00ff0080;
+      }
+      50% {
+        box-shadow: 0 0 10px rgba(211, 239, 3, 0.5);
+      }
+      75% {
+        box-shadow: 0 0 10px rgba(11, 238, 19, 0.5);
+      }
+      100% {
+        box-shadow: 0 0 10px rgba(21, 255, 0, 0.5);
+      }
+}
+    .navbar-nav .nav-link, .navbar-nav .nav-item {
+      color: #fff;
+    }
+    .product img {
+      width: 100%;
+      height: auto;
+    }
+    .footer {
+      background-color: #000000;
+      color: #fff;
+      padding: 20px 0;
+    }
+    .footer a {
+      color: #fff;
+    }
+    /* Estilo para los botones activos */
+    .navbar-nav .nav-item .nav-link.active {
+      color: rgb(255, 0, 0) !important; /* Color de texto blanco */
+      font-weight: bold; /* Texto en negrita */
+      background-color: rgb(0, 0, 0) !important; /* Fondo rojo */
+    }
+
+    .btn-primary {
+    color: #f7ff0b;
+    background-color: #1fff06;
+    border-color: #00fff2;
+}
+
+    a {
+    color: #f22004;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.nav-item.dropdown {
+position: relative;
+}
+
+.nav-item.dropdown .dropdown-menu {
+display: none;
+position: absolute;
+background-color: #03eeff;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px #0004fa;
+z-index: 1;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+display: block;
+}
+
+.nav-item.dropdown .dropdown-menu .dropdown-item {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+
+.nav-item.dropdown .dropdown-menu .dropdown-item:hover {
+background-color: #ddd;
+}
+
+.nav-item.dropdown .dropdown-menu .dropdown-item:hover {
+background-color: hsl(114, 93%, 48%);
+}
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">
+          <img src="https://i.pinimg.com/564x/15/f3/b1/15f3b1dd58c05f61a2f4f1bbe85e9e33.jpg" alt="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          
+            <nav class="navbar justify-content-center">
+              <!-- Tus menús aquí -->
+            
+              <li class="nav-item dropdown"> 
+                <a class="nav-link dropdown-toggle" href="index.html" role="button" data-bs-toggle="dropdown" aria-expanded="false"> CALZADOS </a> 
+                <ul class="dropdown-menu"> <li><a class="dropdown-item" href="DAMAS.HTML">DAMAS</a>
+                </li> 
+                <li><a class="dropdown-item" href="CABALLEROS.HTML">CABALLEROS</a>
+                </li> 
+                <li><a class="dropdown-item" href="NIÑOS.HTML">NIÑOS</a>
+                </li> 
+              </ul> 
+            
+            
+                <li class="nav-item">
+              <a class="nav-link" href="novedades.html">NOVEDADES</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="nosotros.html">NOSOTROS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cantidad.html">CANTIDAD DEL PRODUCTO</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contactanos.html">CONTACTENOS</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="ubicacion.html">UBICACIÓN</a>
+            </li>
+            
+            
+           
+            
+          </ul>
+        </div>
+        <nav class="navbar navbar-expand">
+          <ul class="navbar-nav mr-auto">
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button type="submit">INICIAR SESIÓN</button>  
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="login.html">Iniciar Sesión</a>
+                <a class="dropdown-item" href="perfil.html">Perfil</a>
+                <a class="dropdown-item" href="LIBRODERECLAMCIONES.HTML">Libro de Reclamaciones</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="carrito.html">
+              <button type="submit">Carrito</button></a>
+            </li>
+          </ul>
+        </nav>
+      
+        
+      </nav>
+    <div class="invoice-container">
+        <header class="text-center">
+           
+            <h1 class="mb-0">Tienda virtual de calzados</h1>
+            <p>JR.ARICA NR°987, Huanta, Ayacucho</p>
+            
+        </header>
+
+        <main>
+            <div class="invoice-info">
+                <div class="customer-info">
+                    <h2>Información del Cliente</h2>
+                    <p>Nombre: Diner GARCIA</p>
+                    <p>Dirección: JR.GERVACIOS SATILLANA, Huanta</p>
+                    <p>Teléfono: 987654321</p>
+                </div>
+                <div class="invoice-details">
+                    <h2>Detalles de la Factura</h2>
+                    <p>Número de Factura: 00023</p>
+                    <p>Fecha: O7 de julio de 2024</p>
+                </div>
+            </div>
+
+            <table class="table table-striped table-bordered product-table">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio Unitario</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Zapatilla nike</td>
+                        <td>3</td>
+                        <td>S/ 50.00</td>
+                        <td>S/ 150.00</td>
+                    </tr>
+                    <tr>
+                        <td>Zapatillas de vestir</td>
+                        <td>4</td>
+                        <td>S/ 100.00</td>
+                        <td>S/ 400.00</td>
+                    </tr>
+                    <tr>
+                        <td>Zapatilla Adidas</td>
+                        <td>3</td>
+                        <td>S/ 50.00</td>
+                        <td>S/ 150.00</td>
+                    </tr>
+                    <tr>
+                        <td>Zapatos de futbol</td>
+                        <td>4</td>
+                        <td>S/ 100.00</td>
+                        <td>S/ 400.00</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" class="total-label">Total:</td>
+                        <td class="total-amount">S/ 1,100</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </main>
+
+        <footer class="text-center">
+            <div class="actions">
+                <button class="btn btn-primary download-btn">Descargar</button>
+
+            
+                <a href="imprimir.html" class="btn btn-warning return-btn">Imprimir</a>
+                <a href="index.html" class="btn btn-warning return-btn">Volver a Comprar</a>
+            </div>
+            <p>¡Gracias por su compra!</p>
+            <p>Visite nuestra tienda online: www.calzadoshuanta.com</p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const downloadBtn = document.querySelector('.download-btn');
+        const printBtn = document.querySelector('.print-btn');
+
+        downloadBtn.addEventListener('click', () => {
+            downloadBtn.classList.remove('btn-primary');
+            downloadBtn.classList.add('btn-secondary');
+            // Lógica para descargar la factura
+            console.log('Factura descargada');
+        });
+
+        printBtn.addEventListener('click', () => {
+            printBtn.classList.remove('btn-success');
+            printBtn.classList.add('btn-warning');
+            // Lógica para imprimir la factura
+            console.log('Factura impresa');
+        });
+    </script>
+</body>
+
+</html>

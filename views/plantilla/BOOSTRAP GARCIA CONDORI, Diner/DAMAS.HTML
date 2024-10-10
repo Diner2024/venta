@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIENDA DE CALZADOS </title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        text-align: left;
+        background-color: #68b3b4;
+    }
+    
+        .navbar {
+          background-color: hsl(142, 27%, 84%);
+        }
+        .navbar-brand img {
+        height: 70px;
+        width: 100%;
+          
+          object-fit: cover;
+          display: inline-block;
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          overflow: hidden;
+          animation: border-pulse 2s infinite;
+        }
+    
+        @keyframes border-pulse {
+          0% {
+            box-shadow: 0 0 10px rgb(9, 33, 247);
+          }
+          25% {
+            box-shadow: 0 0 10px hsl(99, 99%, 47%);
+          }
+          50% {
+            box-shadow: 0 0 10px rgb(211, 239, 3);
+          }
+          75% {
+            box-shadow: 0 0 10px rgb(11, 238, 19);
+          }
+          100% {
+            box-shadow: 0 0 10px rgb(255, 0, 0);
+          }
+    }
+        .navbar-nav .nav-link, .navbar-nav .nav-item {
+          color: #fff;
+        }
+        .product img {
+          width: 100%;
+          height: auto;
+        }
+        .footer {
+          background-color: #000000;
+          color: #fff;
+          padding: 20px 0;
+        }
+        .footer a {
+          color: #fff;
+        }
+        /* Estilo para los botones activos */
+        .navbar-nav .nav-item .nav-link.active {
+          color: rgb(255, 0, 0) !important; /* Color de texto blanco */
+          font-weight: bold; /* Texto en negrita */
+          background-color: rgb(0, 0, 0) !important; /* Fondo rojo */
+        }
+    
+        .btn-primary {
+        color: #f7ff0b;
+        background-color: #1fff06;
+        border-color: #00fff2;
+        animation: blink 1s infinite;
+    }
+    
+    
+    
+    .nav-item.dropdown {
+    position: relative;
+    }
+    
+    .nav-item.dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #03eeff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgb(0, 4, 250);
+    z-index: 1;
+    }
+    
+    .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    }
+    
+    .nav-item.dropdown .dropdown-menu .dropdown-item {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    }
+    
+    .nav-item.dropdown .dropdown-menu .dropdown-item:hover {
+    background-color: #ddd;
+    }
+    
+    .nav-item.dropdown .dropdown-menu .dropdown-item:hover {
+    background-color: hsl(114, 93%, 48%);
+    }
+    
+    .dropdown-item {
+        display: block;
+        width: 100%;
+        padding: .25rem 1.5rem;
+        clear: both;
+        font-weight: 400;
+        color: hsl(246, 96%, 49%);
+        text-align: inherit;
+        white-space: nowrap;
+        background-color: #06ecf0;
+        border: 0;
+    }
+    button {
+        color: red;
+    background: #5ea7f5;
+    
+        box-shadow: 0 0 5px #03e9f4,
+        0 0 25px #03e9f4,
+        0 0 50px #03e9f4,
+        0 0 100px #03e9f4;
+    }
+    
+    
+      </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <a class="navbar-brand" href="#">
+    <img src="https://i.pinimg.com/564x/15/f3/b1/15f3b1dd58c05f61a2f4f1bbe85e9e33.jpg" alt="logo">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    
+      <nav class="navbar justify-content-center">
+        <!-- Tus menús aquí -->
+      
+        <li class="nav-item dropdown"> 
+          <a class="nav-link dropdown-toggle" href="index.html" role="button" data-bs-toggle="dropdown" aria-expanded="false"> CALZADOS </a> 
+          <ul class="dropdown-menu"> <li><a class="dropdown-item" href="DAMAS.HTML">DAMAS</a>
+          </li>
+           <li><a class="dropdown-item" href="CABALLEROS.HTML">CABALLEROS</a>
+          </li>
+           <li><a class="dropdown-item" href="NIÑOS.HTML">NIÑOS</a>
+          </li> 
+        </ul> 
+        
+      
+      
+          <li class="nav-item">
+        <a class="nav-link" href="novedades.html">NOVEDADES</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="nosotros.html">NOSOTROS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="cantidad.html">CANTIDAD DEL PRODUCTO</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contactanos.html">CONTACTENOS</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="ubicacion.html">UBICACIÓN</a>
+      </li>
+      
+      
+     
+      
+    </ul>
+  </div>
+  <nav class="navbar navbar-expand">
+    <ul class="navbar-nav mr-auto">
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button type="submit">INICIAR SESIÓN</button>  
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="login.html">Iniciar Sesión</a>
+          <a class="dropdown-item" href="perfil.html">Perfil</a>
+          <a class="dropdown-item" href="LIBRODERECLAMCIONES.HTML">Libro de Reclamaciones</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="carrito.html">
+        <button type="submit">Carrito</button></a>
+      </li>
+    </ul>
+  </nav>
+
+  
+</nav>
+
+
+
+<!-- Products Section -->
+<a class="nav-link" href="index.html">
+    <button type="submit">VOLVER AL INICIO</button></a>
+<div class="container my-5">
+  <div class="row text-center">
+    <div class="col-md-3 product mb-4">
+      <a href="detalleproducto.html">
+      <img src="https://www.falabella.com.pe/cdn-cgi/imagedelivery/4fYuQyy-r8_rpBpcY7lH_A/falabellaPE/20217466_2/width=240,height=240,quality=70,format=webp,fit=pad" alt="Product 1" class="h-50">
+      </a>
+      <p>Una zaptilla unica y exclusiva</p>
+      <p>S/130.00</p>
+      <p>TALLAS DISPONIBLES: 36, 38, 39, 40,</p>
+      <a href="carrito.html" class="btn btn-primary">Agregar al carrito</a>
+    </div>
+    <div class="col-md-3 product mb-4">
+      <a href="detalleproducto.html">
+        <img src="https://www.falabella.com.pe/cdn-cgi/imagedelivery/4fYuQyy-r8_rpBpcY7lH_A/falabellaPE/20402223_2/width=240,height=240,quality=70,format=webp,fit=pad" alt="Product 2" class="h-50">
+      </a>
+      <p>Una zapatilla del unico  modelo</p>
+      <p>S/100.00</p>
+      <p> DISPONIBLES EN TODAS LAS TALLAS </p>
+      <a href="carrito.html" class="btn btn-primary">Agregar al carrito</a>
+    </div>
+    <div class="col-md-3 product mb-4">
+      <a href="detalleproducto.html">
+        <img src="https://www.falabella.com.pe/cdn-cgi/imagedelivery/4fYuQyy-r8_rpBpcY7lH_A/falabellaPE/20176045_2/width=240,height=240,quality=70,format=webp,fit=pad" alt="Product 3"class="h-50">
+      </a>
+      <p>Un excelente zapato para la fiesta</p>
+      <p>S/130.00</p>
+      <p>TALLAS DISPONIBLES: 36, 38, 39, 40, 41</p>
+      <a href="carrito.html" class="btn btn-primary">Agregar al carrito</a>
+    </div>
+    <div class="col-md-3 product mb-4">
+      <a href="detalleproducto.html">
+        <img src="https://www.falabella.com.pe/cdn-cgi/imagedelivery/4fYuQyy-r8_rpBpcY7lH_A/falabellaPE/20218994_2/width=240,height=240,quality=70,format=webp,fit=pad" alt="Product 4" class="h-50">
+      </a>
+      <p>Un zapato hermoso para las hombres</p>
+      <p>S/130.00</p>
+      <p>TALLAS DISPONIBLES: 36, 38, 39, 40, 41</p>
+      <a href="carrito.html"class="btn btn-primary">Agregar al carrito</a>
+    </div>
+    <div class="col-md-3 product mb-4">
+      <a href="detalleproducto.html">
+        <img src="https://www.falabella.com.pe/cdn-cgi/imagedelivery/4fYuQyy-r8_rpBpcY7lH_A/falabellaPE/19983470_2/width=240,height=240,quality=70,format=webp,fit=pad" alt="Product 5" class="h-50">
+      </a>
+      <p>Una zaptilla unica para las damas</p>
+      <p>S/130.00</p>
+      <p>TALLAS DISPONIBLES: 36, 38, 39, 40, 41</p>
+      <a href="carrito.html" class="btn btn-primary">Agregar al carrito</a>
+    </div>
+    <div class="col-md-3 product mb-4">
+      <a href="detalleproducto.html">
+        <img src="https://www.falabella.com.pe/cdn-cgi/imagedelivery/4fYuQyy-r8_rpBpcY7lH_A/falabellaPE/20169054_2/width=240,height=240,quality=70,format=webp,fit=pad" alt="Product 6" class="h-50">
+      </a>
+      <p>zaptillas en todas los modelos</p>
+      <p>S/130.00</p>
+      <p>TALLAS DISPONIBLES: 36, 38, 39, 40, 41</p>
+      <a href="carrito.html" class="btn btn-primary">Agregar al carrito</a>
+    </div>
+    <div class="col-md-3 product mb-4">
+      <a href="detalleproducto.html">
+        <img src="https://www.falabella.com.pe/cdn-cgi/imagedelivery/4fYuQyy-r8_rpBpcY7lH_A/falabellaPE/20200978_2/width=240,height=240,quality=70,format=webp,fit=pad" alt="Product 7" class="h-50">
+      </a>
+      <p>Una zapatilla exclusivamente unica para las damas</p>
+      <p>S/130.00</p>
+      <p>TALLAS DISPONIBLES: 36, 38, 39, 40, 41</p>
+      <a href="carrito.html"class="btn btn-primary">Agregar al carrito</a>
+    </div>
+    <div class="col-md-3 product mb-4">
+      <a href="detalleproducto.html">
+        <img src="https://www.falabella.com.pe/cdn-cgi/imagedelivery/4fYuQyy-r8_rpBpcY7lH_A/falabellaPE/20217471_2/width=240,height=240,quality=70,format=webp,fit=pad" alt="Product 8" class="h-50">
+      </a>
+      <p>los mejores modelos</p>
+      <p>S/130.00</p>
+      <p>TALLAS DISPONIBLES: 36, 38, 39, 40, 41</p>
+      <a href="carrito.html" class="btn btn-primary">Agregar al carrito</a>
+    </div>
+    <div class="col-md-3 product mb-4">
+      <a href="detalleproducto.html">
+        <img src="https://www.falabella.com.pe/cdn-cgi/imagedelivery/4fYuQyy-r8_rpBpcY7lH_A/falabellaPE/20176045_2/width=240,height=240,quality=70,format=webp,fit=pad" alt="Product 4" class="h-50">
+      </a>
+      <p>Unos hermosos zapato</p>
+      <p>S/130.00</p>
+      <p>TALLAS DISPONIBLES: 36, 38, 39, 40,</p>
+      <a href="carrito.html" class="btn btn-primary">Agregar al carrito</a>
+    </div>
+    <div class="col-md-3 product mb-4">
+      <a href="detalleproducto.html">
+        <img src="https://www.falabella.com.pe/cdn-cgi/imagedelivery/4fYuQyy-r8_rpBpcY7lH_A/falabellaPE/20219006_2/width=240,height=240,quality=70,format=webp,fit=pad" alt="Product 5" class="h-50">
+      </a>
+      <p>El unico y mejor</p>
+      <p>S/100.00</p>
+      <p>TALLAS DISPONIBLES: 36, 38, 39, 40,</p>
+      <a href="carrito.html" class="btn btn-primary">Agregar al carrito</a>
+    </div>
+    <div class="col-md-3 product mb-4">
+      <a href="detalleproducto.html">
+        <img src="https://www.falabella.com.pe/cdn-cgi/imagedelivery/4fYuQyy-r8_rpBpcY7lH_A/falabellaPE/20307092_2/width=240,height=240,quality=70,format=webp,fit=pad" alt="Product 6" class="h-50">
+      </a>
+      <p>uno de los mejores zapatillas</p>
+      <p>S/80.00</p>
+      <p>TALLAS DISPONIBLES: 36, 38, 39, 40,</p>
+      <a href="carrito.html" class="btn btn-primary">Agregar al carrito</a>
+    </div>
+    <div class="col-md-3 product mb-4">
+      <a href="detalleproducto.html">
+        <img src="https://www.falabella.com.pe/cdn-cgi/imagedelivery/4fYuQyy-r8_rpBpcY7lH_A/falabellaPE/20218931_2/width=240,height=240,quality=70,format=webp,fit=pad" alt="Product 7" class="h-50">
+      </a>
+      <p>Los mejores modelos </p>
+      <p>S/50.00</p>
+      <p>TALLAS DISPONIBLES: 36, 38, 39, 40,</p>
+      <a href="carrito.html" class="btn btn-primary">Agregar al carrito</a>
+    </div>
+   
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h5>Boletín</h5>
+        <p>Introduzca su dirección de correo electrónico</p>
+        <form>
+          <div class="form-group">
+            <input type="email" class="form-control" placeholder="Ingresa tu correo...">
+          </div>
+          <a href="contactanos.html" class="btn btn-primary">ENVIAR</a>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <h5>Configuración de la tienda</h5>
+        <p>Calzados  S.A.C.,  JR. Arica, 976 Huanta, PERU</p>
+        <p>Llámamos ahora: 955788707</p>
+        <p>www.calzadoshuanta.com</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col text-center">
+        <a href="https://www.facebook.com/">
+          <img src="https://static.vecteezy.com/system/resources/previews/016/716/447/non_2x/facebook-icon-free-png.png" alt="Facebook" class="img-fluid" style="max-width: 50px;">
+        </a>
+        <a href="https://www.instagram.com/">
+          <img src="https://static.vecteezy.com/system/resources/previews/018/930/691/original/instagram-logo-instagram-icon-transparent-free-png.png" alt="Instagram" class="img-fluid" style="max-width: 50px;">
+        </a>
+        <a href="https://x.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJteCI6IjIifQ%3D%3D%22%7D">
+          <img src="https://png.pngtree.com/png-clipart/20190516/original/pngtree-twitter-logo-icon-png-image_3570310.png" alt="Twitter" class="img-fluid" style="max-width: 50px;">
+        </a>
+        <a href="https://www.youtube.com/">
+          <img src="https://pngfre.com/wp-content/uploads/You-Tube-14.png" alt="YouTube" class="img-fluid" style="max-width: 50px;">
+        </a>
+        <a href="https://www.google.co.uk/">
+          <img src="https://www.keyweo.com/wp-content/uploads/2022/03/el-logo-g-de-google.png" alt="Google" class="img-fluid" style="max-width: 50px;">
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Script personalizado para activar el cambio de estilo al hacer clic -->
+<script>
+  // JavaScript para activar el cambio de estilo al hacer clic
+  const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+  
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      navLinks.forEach(link => link.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZAPATILLAS NIKE</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+</head>
+<body>
+<style>
+  /* Container styles */
+.container {
+  
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* Image styles */
+.img-fluid {
+  border-radius: 5px;
+}
+
+/* Heading styles */
+h1 {
+  color: #333;
+  font-weight: bold;
+}
+
+/* Price and quantity styles */
+.h4 {
+  color: #6c757d;
+}
+
+/* Quantity input group styles */
+.input-group {
+  display: flex;
+  align-items: center;
+}
+
+.input-group button {
+  background-color: #e9ecef;
+  border-color: #ced4da;
+  color: #495057;
+  font-weight: bold;
+}
+
+.input-group button:hover {
+  background-color: #d1d3d5;
+}
+
+.input-group input {
+  border-color: #ced4da;
+  text-align: center;
+}
+
+/* Discount code input group styles */
+.form-group .input-group input {
+  border-color: #ced4da;
+}
+
+.form-group .input-group button {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+}
+
+.form-group .input-group button:hover {
+  background-color: hsl(123, 91%, 50%);
+  border-color: #07f0f8;
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: #00ff0d;
+  border-color: #ff5900;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #adb300;
+  border-color: hwb(211 13% 5%);
+}
+
+.btn-outline-secondary {
+  border-color: hsl(179, 98%, 52%);
+  color: hsl(51, 98%, 48%);
+  font-weight: bold;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #edf431;
+  border-color: hwb(46 33% 1%);
+  color: hsl(237, 97%, 54%);
+}
+
+.navbar {
+      background-color: hsl(142, 27%, 84%);
+    }
+    .navbar-brand img {
+      height: 70px;
+    width: 100%;
+      
+      object-fit: cover;
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      animation: border-pulse 2s infinite;
+    }
+
+    @keyframes border-pulse {
+      0% {
+        box-shadow: 0 0 10px rgba(9, 33, 247, 0.5);
+      }
+      25% {
+        box-shadow: 0 0 10px #00ff0080;
+      }
+      50% {
+        box-shadow: 0 0 10px rgba(211, 239, 3, 0.5);
+      }
+      75% {
+        box-shadow: 0 0 10px rgba(11, 238, 19, 0.5);
+      }
+      100% {
+        box-shadow: 0 0 10px rgba(21, 255, 0, 0.5);
+      }
+}
+    .navbar-nav .nav-link, .navbar-nav .nav-item {
+      color: #fff;
+    }
+    .product img {
+      width: 100%;
+      height: auto;
+    }
+    .footer {
+      background-color: #000000;
+      color: #fff;
+      padding: 20px 0;
+    }
+    .footer a {
+      color: #fff;
+    }
+    /* Estilo para los botones activos */
+    .navbar-nav .nav-item .nav-link.active {
+      color: rgb(255, 0, 0) !important; /* Color de texto blanco */
+      font-weight: bold; /* Texto en negrita */
+      background-color: rgb(0, 0, 0) !important; /* Fondo rojo */
+    }
+
+    .btn-primary {
+    color: #f7ff0b;
+    background-color: #1fff06;
+    border-color: #00fff2;
+}
+
+    a {
+    color: #f22004;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.nav-item.dropdown {
+position: relative;
+}
+
+.nav-item.dropdown .dropdown-menu {
+display: none;
+position: absolute;
+background-color: #f1f1f1;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+display: block;
+}
+
+.nav-item.dropdown .dropdown-menu .dropdown-item {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+
+.nav-item.dropdown .dropdown-menu .dropdown-item:hover {
+background-color: #ddd;
+}
+
+.nav-item.dropdown .dropdown-menu .dropdown-item:hover {
+background-color: hsl(114, 93%, 48%);
+}
+
+</style>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <a class="navbar-brand" href="#">
+    <img src="https://i.pinimg.com/564x/15/f3/b1/15f3b1dd58c05f61a2f4f1bbe85e9e33.jpg" alt="logo">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    
+      <nav class="navbar justify-content-center">
+        <!-- Tus menús aquí -->
+      
+        <li class="nav-item dropdown"> 
+          <a class="nav-link dropdown-toggle" href="index.html" role="button" data-bs-toggle="dropdown" aria-expanded="false"> CALZADOS </a> 
+          <ul class="dropdown-menu"> <li><a class="dropdown-item" href="DAMAS.HTML">DAMAS</a>
+          </li> 
+          <li><a class="dropdown-item" href="CABALLEROS.HTML">CABALLEROS</a>
+          </li> 
+          <li><a class="dropdown-item" href="NIÑOS.HTML">NIÑOS</a>
+          </li> 
+        </ul> 
+      
+      
+          <li class="nav-item">
+        <a class="nav-link" href="novedades.html">NOVEDADES</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="nosotros.html">NOSOTROS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="cantidad.html">CANTIDAD DEL PRODUCTO</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contactanos.html">CONTACTENOS</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="ubicacion.html">UBICACIÓN</a>
+      </li>
+      
+      
+     
+      
+    </ul>
+  </div>
+  <nav class="navbar navbar-expand">
+    <ul class="navbar-nav mr-auto">
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button type="submit">INICIAR SESIÓN</button>  
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="login.html">Iniciar Sesión</a>
+          <a class="dropdown-item" href="perfil.html">Perfil</a>
+          <a class="dropdown-item" href="LIBRODERECLAMCIONES.HTML">Libro de Reclamaciones</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="carrito.html">
+        <button type="submit">Carrito</button></a>
+      </li>
+    </ul>
+  </nav>
+
+  
+</nav>
+
+
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="https://www.falabella.com.pe/cdn-cgi/imagedelivery/4fYuQyy-r8_rpBpcY7lH_A/falabellaPE/119673063_02/width=240,height=240,quality=70,format=webp,fit=pad" alt="Polo Lewis Z Negro" class="img-fluid">
+      </div>
+      <div class="col-md-6">
+        <h1>ZAPATILLAS NIKE</h1>
+        <p class="h4">Precio: S/120.00</p>
+        <div class="form-group">
+          <label for="quantity">Cantidad:</label>
+          <div class="input-group">
+            <button class="btn btn-outline-secondary" type="button" id="button-minus">-</button>
+            <input type="number" class="form-control" id="quantity" value="1" min="1">
+            <button class="btn btn-outline-secondary" type="button" id="button-plus">+</button>
+          </div>
+        </div>
+        <p class="h4">Total: S/120.00</p>
+        <div class="form-group">
+          <label for="discount-code">Cupon de descuento:</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="discount-code" placeholder="Ingresa el código">
+            <button class="btn btn-primary" type="button">Aplicar</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="subtotal">Subtotal:</label>
+          <p class="h4" id="subtotal">S/120.00</p>
+        </div>
+        <div class="form-group">
+          <label for="total">Total:</label>
+          <p class="h4" id="total">S/120.00</p>
+        </div>
+        <div class="d-grid gap-2">
+          <a href="carrito.html" class="btn btn-primary" type="button">Añadir al carrito</a>
+          <a href="index.html" class="btn btn-outline-secondary" type="button">Volver a elegir producto</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+  <script>
+    // Add event listeners for the quantity buttons
+    document.getElementById('button-minus').addEventListener('click', () => {
+      const quantityInput = document.getElementById('quantity');
+      let quantity = parseInt(quantityInput.value);
+      if (quantity > 1) {
+        quantityInput.value = quantity - 1;
+        updateTotal();
+      }
+    });
+
+    document.getElementById('button-plus').addEventListener('click', () => {
+      const quantityInput = document.getElementById('quantity');
+      let quantity = parseInt(quantityInput.value);
+      quantityInput.value = quantity + 1;
+      updateTotal();
+    });
+
+    function updateTotal() {
+      const quantityInput = document.getElementById('quantity');
+      const quantity = parseInt(quantityInput.value);
+      const total = 120.00 * quantity;
+      document.getElementById('subtotal').textContent = `S/${total.toFixed(2)}`;
+      document.getElementById('total').textContent = `S/${total.toFixed(2)}`;
+    }
+  </script>
+
+
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h5></h5>
+        <p>Introduzca su dirección de correo electrónico</p>
+        <form>
+          <div class="form-group">
+            <input type="email" class="form-control" placeholder="Ingresa tu correo...">
+          </div>
+          <a href="contactanos.html" class="btn btn-primary">ENVIAR</a>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <h5>Configuración de la tienda</h5>
+        <p>CALZADOS  S.A.C., JR.  ARICA 976, Huanta, PERU</p>
+        <p>LlámaR  955788707</p>
+        <p>www.calzadoshuanta@gmail.com</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col text-center">
+        <a href="https://www.facebook.com/">
+          <img src="https://static.vecteezy.com/system/resources/previews/016/716/447/non_2x/facebook-icon-free-png.png" alt="Facebook" class="img-fluid" style="max-width: 50px;">
+        </a>
+        <a href="https://www.instagram.com/">
+          <img src="https://static.vecteezy.com/system/resources/previews/018/930/691/original/instagram-logo-instagram-icon-transparent-free-png.png" alt="Instagram" class="img-fluid" style="max-width: 50px;">
+        </a>
+        <a href="https://x.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJteCI6IjIifQ%3D%3D%22%7D">
+          <img src="https://png.pngtree.com/png-clipart/20190516/original/pngtree-twitter-logo-icon-png-image_3570310.png" alt="Twitter" class="img-fluid" style="max-width: 50px;">
+        </a>
+        <a href="https://www.youtube.com/">
+          <img src="https://pngfre.com/wp-content/uploads/You-Tube-14.png" alt="YouTube" class="img-fluid" style="max-width: 50px;">
+        </a>
+        <a href="https://www.google.co.uk/">
+          <img src="https://www.keyweo.com/wp-content/uploads/2022/03/el-logo-g-de-google.png" alt="Google" class="img-fluid" style="max-width: 50px;">
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Script personalizado para activar el cambio de estilo al hacer clic -->
+<script>
+  // JavaScript para activar el cambio de estilo al hacer clic
+  const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+  
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      navLinks.forEach(link => link.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>
