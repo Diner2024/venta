@@ -1,5 +1,5 @@
 <!-- Products Section -->
-<a class="nav-link" href="<?php echo BASE_URL ?>index">
+<a class="nav-link" href="<?php echo BASE_URL ?>inicio">
     <button type="submit">VOLVER AL INICIO</button></a>
 <div class="container my-5">
   <div class="row text-center">

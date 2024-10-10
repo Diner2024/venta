@@ -50,6 +50,6 @@
       </div>
     </div>
     <div class="text-center mt-4">
-      <a href="<?php echo BASE_URL ?>index" class="btn btn-primary">VOLVER A LA PAGINA PRINCIPAL</a>
+      <a href="<?php echo BASE_URL ?>inicio" class="btn btn-primary">VOLVER A LA PAGINA PRINCIPAL</a>
     </div>
   </div>
