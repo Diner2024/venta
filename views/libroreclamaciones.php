@@ -103,7 +103,7 @@
     <div class="modal-content">
       <h2>¡Reclamación enviada correctamente!</h2>
       <p>En breve estaremos en contacto con usted.</p>
-      <a class="nav-link" href="index.html">
+      <a class="nav-link" href="<?php echo BASE_URL ?>inicio">
         <button type="submit">volver al inicio</button></a>
     </div>
   </div>
