@@ -199,8 +199,8 @@ background: #5ea7f5;
           <button type="submit">INICIAR SESIÓN</button>  
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="<?php echo BASE_URL ?>">Iniciar Sesión</a>
-          <a class="dropdown-item" href="<?php echo BASE_URL ?>">Perfil</a>
+          <a class="dropdown-item" href="<?php echo BASE_URL ?>inicio">Iniciar Sesión</a>
+          <a class="dropdown-item" href="<?php echo BASE_URL ?>perfil">Perfil</a>
           <a class="dropdown-item" href="<?php echo BASE_URL ?>libroreclamaciones">Libro de Reclamaciones</a>
         </div>
       </li>

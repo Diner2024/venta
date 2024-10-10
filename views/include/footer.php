@@ -9,7 +9,7 @@
           <div class="form-group">
             <input type="email" class="form-control" placeholder="Ingresa tu correo...">
           </div>
-          <a href="contactanos.html" class="btn btn-primary">ENVIAR</a>
+          <a href="<?php echo BASE_URL ?>contactanos" class="btn btn-primary">ENVIAR</a>
         </form>
       </div>
       <div class="col-md-6">
