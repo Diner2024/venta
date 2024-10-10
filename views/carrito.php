@@ -48,7 +48,7 @@
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1200px-Mastercard-logo.svg.png" alt="Banco D" class="img-thumbnail" style="cursor: pointer; width: 50px; height: 50px; margin-right: 50px;" onclick="selectBank('MASTERCARD', 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/2560px-MasterCard_Logo.svg.png')">
               </div>
             </div>
-            <a href="<?php echo BASE_URL ?>imprimir" class="btn btn-primary">PROCEDER EL PAGO</a> <br> <br>
+            <a href="<?php echo BASE_URL ?>pagofactura" class="btn btn-primary">PROCEDER EL PAGO</a> <br> <br>
             <a href="<?php echo BASE_URL ?>inicio" class="btn btn-secondary">VOLVER A ELEGIR PRODUCTO</a>
           </div>
         </div>

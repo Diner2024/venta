@@ -126,7 +126,7 @@
     </tfoot>
   </table>
   
-  <a href="respuesta.html" class="btn btn-warning return-btn">Imprimir Boleta</a>
+  <a href="<?php echo BASE_URL ?>imprimir" class="btn btn-warning return-btn">Imprimir Boleta</a>
   
   <div id="message">La boleta se ha impreso correctamente.</div>
   
