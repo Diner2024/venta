@@ -97,8 +97,8 @@
         <div class="face bottom">4</div>
     </div>
     <div class="error-message">
-        <p>Oops! La página que buscas no existe.</p>
-        <p>Vuelve al <a href="<?php echo BASE_URL ?>inicio" class="home-link">inicio</a> para seguir explorando.</p>
+        <p>Uups! La página que buscas no existe.</p>
+        <p>Vuelve al <a href="<?php echo BASE_URL ?>login" class="home-link">inicio</a> para seguir explorando.</p>
     </div>
 
     <script>
