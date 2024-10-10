@@ -1,115 +1,115 @@
 <!-- Products Section -->
-<a class="nav-link" href="index.html">
+<a class="nav-link" href="<?php echo BASE_URL ?>index">
     <button type="submit">VOLVER AL INICIO</button></a>
 <div class="container my-5">
   <div class="row text-center">
     <div class="col-md-3 product mb-4">
-      <a href="detalleproducto.html">
+      <a href="<?php echo BASE_URL ?>detalleproducto">
       <img src="https://www.falabella.com.pe/cdn-cgi/imagedelivery/4fYuQyy-r8_rpBpcY7lH_A/falabellaPE/127965478_02/width=240,height=240,quality=70,format=webp,fit=pad" alt="Product 1" class="h-50">
       </a>
       <p>Una zaptilla unica y exclusiva</p>
       <p>S/130.00</p>
       <p>TALLAS DISPONIBLES: 19, 20, 21, 24, 26</p>
-      <a href="carrito.html" class="btn btn-primary">Agregar al carrito</a>
+      <a href="<?php echo BASE_URL ?>carrito" class="btn btn-primary">Agregar al carrito</a>
     </div>
     <div class="col-md-3 product mb-4">
-      <a href="detalleproducto.html">
+      <a href="<?php echo BASE_URL ?>detalleproducto">
         <img src="https://www.falabella.com.pe/cdn-cgi/imagedelivery/4fYuQyy-r8_rpBpcY7lH_A/falabellaPE/883001756_2/width=240,height=240,quality=70,format=webp,fit=pad" alt="Product 2" class="h-50">
       </a>
       <p>Una zaptilla unica y exclusiva</p>
       <p>S/100.00</p>
       <p>TALLAS DISPONIBLES: 19, 20, 21, 24, 26</p>
-      <a href="carrito.html" class="btn btn-primary">Agregar al carrito</a>
+      <a href="<?php echo BASE_URL ?>carrito" class="btn btn-primary">Agregar al carrito</a>
     </div>
     <div class="col-md-3 product mb-4">
-      <a href="detalleproducto.html">
+      <a href="<?php echo BASE_URL ?>detalleproducto">
         <img src="https://www.falabella.com.pe/cdn-cgi/imagedelivery/4fYuQyy-r8_rpBpcY7lH_A/falabellaPE/19569703_2/width=240,height=240,quality=70,format=webp,fit=pad" alt="Product 3"class="h-50">
       </a>
       <p>Una zaptilla unica y exclusiva</p>
       <p>S/130.00</p>
       <p>TALLAS DISPONIBLES: 19, 20, 21, 24, 26</p>
-      <a href="carrito.html" class="btn btn-primary">Agregar al carrito</a>
+      <a href="<?php echo BASE_URL ?>carrito" class="btn btn-primary">Agregar al carrito</a>
     </div>
     <div class="col-md-3 product mb-4">
-      <a href="detalleproducto.html">
+      <a href="<?php echo BASE_URL ?>detalleproducto">
         <img src="https://www.falabella.com.pe/cdn-cgi/imagedelivery/4fYuQyy-r8_rpBpcY7lH_A/falabellaPE/20107437_2/width=240,height=240,quality=70,format=webp,fit=pad" alt="Product 4" class="h-50">
       </a>
       <p>Una zaptilla unica y exclusiva</p>
       <p>S/130.00</p>
       <p>TALLAS DISPONIBLES: 19, 20, 21, 24, 26</p>
-      <a href="carrito.html" class="btn btn-primary">Agregar al carrito</a>
+      <a href="<?php echo BASE_URL ?>carrito" class="btn btn-primary">Agregar al carrito</a>
     </div>
     <div class="col-md-3 product mb-4">
-      <a href="detalleproducto.html">
+      <a href="<?php echo BASE_URL ?>detalleproducto">
         <img src="https://www.falabella.com.pe/cdn-cgi/imagedelivery/4fYuQyy-r8_rpBpcY7lH_A/falabellaPE/882995456_2/width=240,height=240,quality=70,format=webp,fit=pad" alt="Product 5" class="h-50">
       </a>
       <p>Una zaptilla unica y exclusiva</p>
       <p>S/130.00</p>
       <p>TALLAS DISPONIBLES: 19, 20, 21, 24, 26</p>
-      <a href="carrito.html" class="btn btn-primary">Agregar al carrito</a>
+      <a href="<?php echo BASE_URL ?>carrito" class="btn btn-primary">Agregar al carrito</a>
     </div>
     <div class="col-md-3 product mb-4">
-      <a href="detalleproducto.html">
+      <a href="<?php echo BASE_URL ?>detalleproducto">
         <img src="https://www.falabella.com.pe/cdn-cgi/imagedelivery/4fYuQyy-r8_rpBpcY7lH_A/falabellaPE/882995456_2/width=240,height=240,quality=70,format=webp,fit=pad" alt="Product 6" class="h-50">
       </a>
       <p>Una zaptilla unica y exclusiva</p>
       <p>S/130.00</p>
       <p>TALLAS DISPONIBLES: 19, 20, 21, 24, 26</p>
-      <a href="carrito.html" class="btn btn-primary">Agregar al carrito</a>
+      <a href="<?php echo BASE_URL ?>carrito" class="btn btn-primary">Agregar al carrito</a>
     </div>
     <div class="col-md-3 product mb-4">
-      <a href="detalleproducto.html">
+      <a href="<?php echo BASE_URL ?>detalleproducto">
         <img src="https://www.falabella.com.pe/cdn-cgi/imagedelivery/4fYuQyy-r8_rpBpcY7lH_A/falabellaPE/19318693_2/width=240,height=240,quality=70,format=webp,fit=pad" alt="Product 7" class="h-50">
       </a>
       <p>Una zaptilla unica y exclusiva</p>
       <p>S/130.00</p>
       <p>TALLAS DISPONIBLES: 19, 20, 21, 24, 26</p>
-      <a href="carrito.html" class="btn btn-primary">Agregar al carrito</a>
+      <a href="<?php echo BASE_URL ?>carrito" class="btn btn-primary">Agregar al carrito</a>
     </div>
     <div class="col-md-3 product mb-4">
-      <a href="detalleproducto.html">
+      <a href="<?php echo BASE_URL ?>detalleproducto">
         <img src="https://tottus.falabella.com.pe/cdn-cgi/imagedelivery/4fYuQyy-r8_rpBpcY7lH_A/tottusPE/43196989_2/width=240,height=240,quality=70,format=webp,fit=pad" alt="Product 8" class="h-50">
       </a>
       <p>Una zaptilla unica y exclusiva</p>
       <p>S/130.00</p>
       <p>TALLAS DISPONIBLES: 19, 20, 21, 24, 26</p>
-      <a href="carrito.html" class="btn btn-primary">Agregar al carrito</a>
+      <a href="<?php echo BASE_URL ?>carrito" class="btn btn-primary">Agregar al carrito</a>
     </div>
     <div class="col-md-3 product mb-4">
-      <a href="detalleproducto.html">
+      <a href="<?php echo BASE_URL ?>detalleproducto">
         <img src="https://tottus.falabella.com.pe/cdn-cgi/imagedelivery/4fYuQyy-r8_rpBpcY7lH_A/falabellaPE/43240225_2/width=240,height=240,quality=70,format=webp,fit=pad" alt="Product 4" class="h-50">
       </a>
       <p>Una zaptilla unica y exclusiva</p>
       <p>S/130.00</p>
       <p>TALLAS DISPONIBLES: 21, 22, 24, 25, 28</p>
-      <a href="carrito.html" class="btn btn-primary">Agregar al carrito</a>
+      <a href="<?php echo BASE_URL ?>carrito" class="btn btn-primary">Agregar al carrito</a>
     </div>
     <div class="col-md-3 product mb-4">
-      <a href="detalleproducto.html">
+      <a href="<?php echo BASE_URL ?>detalleproducto">
         <img src="https://www.falabella.com.pe/cdn-cgi/imagedelivery/4fYuQyy-r8_rpBpcY7lH_A/falabellaPE/20122532_2/width=240,height=240,quality=70,format=webp,fit=pad" alt="Product 5" class="h-50">
       </a>
       <p>El unico y mejor</p>
       <p>S/100.00</p>
       <p>TALLAS DISPONIBLES: 21, 22, 24, 25, 28</p>
-      <a href="carrito.html" class="btn btn-primary">Agregar al carrito</a>
+      <a href="<?php echo BASE_URL ?>carrito" class="btn btn-primary">Agregar al carrito</a>
     </div>
     <div class="col-md-3 product mb-4">
-      <a href="detalleproducto.html">
+      <a href="<?php echo BASE_URL ?>detalleproducto">
         <img src="https://www.falabella.com.pe/cdn-cgi/imagedelivery/4fYuQyy-r8_rpBpcY7lH_A/falabellaPE/883109399_2/width=240,height=240,quality=70,format=webp,fit=pad" alt="Product 6" class="h-50">
       </a>
       <p>Una zaptilla unica y exclusiva</p>
       <p>S/80.00</p>
       <p>TALLAS DISPONIBLES: 21, 22, 24, 25, 28</p>
-      <a href="carrito.html" class="btn btn-primary">Agregar al carrito</a>
+      <a href="<?php echo BASE_URL ?>carrito" class="btn btn-primary">Agregar al carrito</a>
     </div>
     <div class="col-md-3 product mb-4">
-      <a href="detalleproducto.html">
+      <a href="<?php echo BASE_URL ?>detalleproducto">
         <img src="https://www.falabella.com.pe/cdn-cgi/imagedelivery/4fYuQyy-r8_rpBpcY7lH_A/falabellaPE/125478898_02/width=240,height=240,quality=70,format=webp,fit=pad" alt="Product 7" class="h-50">
       </a>
       <p>Una zaptilla unica y exclusiva</p>
       <p>S/50.00</p>
       <p>TALLAS DISPONIBLES: 21, 22, 24, 25, 28</p>
-      <a href="carrito.html" class="btn btn-primary">Agregar al carrito</a>
+      <a href="<?php echo BASE_URL ?>carrito" class="btn btn-primary">Agregar al carrito</a>
     </div>
    
   </div>

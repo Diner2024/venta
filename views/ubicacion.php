@@ -24,7 +24,7 @@
                     <p><strong>Dirección:</strong> JR.ARICA N°976, Huanta, Ayacucho, Perú</p>
                     <p><strong>Horarios de Atención:</strong> Lunes a Sábado: 10:00 am - 8:00 pm, Domingos: 11:00 am - 5:00 pm</p>
                     <p><strong>Contacto:</strong> Teléfono: 002-4234-2345, Email: calzados2024@gamil.com</p>
-                    <a href="index.html" class="btn btn-primary">Volver al inicio</a>
+                    <a href="<?php echo BASE_URL ?>index" class="btn btn-primary">Volver al inicio</a>
                 </div>
             </div>
         </div>

@@ -71,8 +71,8 @@
                 <button class="btn btn-primary download-btn">Descargar</button>
 
             
-                <a href="imprimir.html" class="btn btn-warning return-btn">Imprimir</a>
-                <a href="index.html" class="btn btn-warning return-btn">Volver a Comprar</a>
+                <a href="<?php echo BASE_URL ?>imprimir" class="btn btn-warning return-btn">Imprimir</a>
+                <a href="<?php echo BASE_URL ?>index" class="btn btn-warning return-btn">Volver a Comprar</a>
             </div>
             <p>¡Gracias por su compra!</p>
             <p>Visite nuestra tienda online: www.calzadoshuanta.com</p>

@@ -150,8 +150,8 @@
                         <input type="text" class="form-control" id="contactos" placeholder="Ingresa tus contactos">
                     </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <a href="index.html" class="btn btn-primary">Aceptar</a>
-                        <a href="index.html" class="btn btn-secondary">Volver al inicio</a>
+                        <a href="<?php echo BASE_URL ?>index" class="btn btn-primary">Aceptar</a>
+                        <a href="<?php echo BASE_URL ?>index" class="btn btn-secondary">Volver al inicio</a>
                     </div>
                 </form>
             </div>
