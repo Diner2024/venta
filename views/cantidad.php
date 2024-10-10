@@ -5,7 +5,7 @@
       </div>
       <div class="col-md-6">
         <h1>ZAPATILLAS NIKE</h1>
-        <p class="h4">Precio: S/120.00</p>
+        <p class="h4">Precio: S/125.00</p>
         <div class="form-group">
           <label for="quantity">Cantidad:</label>
           <div class="input-group">
