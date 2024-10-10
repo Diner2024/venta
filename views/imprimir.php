@@ -134,7 +134,7 @@
     document.querySelector('.return-btn').addEventListener('click', function(event) {
       event.preventDefault();
       alert('¡Felicitaciones! El boleto se ha impreso correctamente.');
-      window.location.href = '/index.html';
+      window.location.href = "<?php echo BASE_URL ?>inicio";
     });
     </script>
 </body>
