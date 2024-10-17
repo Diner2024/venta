@@ -8,7 +8,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
 body {
-    margin: 0;
+  margin: auto;
+  padding: auto;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 1rem;
     font-weight: 400;
@@ -141,6 +142,11 @@ background: #5ea7f5;
 
 
   </style>
+
+<script>
+  const base_url = '<?php echo BASE_URL; ?>'
+</script>
+
 </head>
 <body>
 
