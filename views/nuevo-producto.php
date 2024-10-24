@@ -25,11 +25,8 @@
                 <label for="idCategoria" class="form-label">ID Categoría</label>
                 <input type="number" class="form-control" id="idCategoria" name="idCategoria" required>
             </div>
-            <div class="mb-3">
-                <label for="fechaVencimiento" class="form-label">Fecha de Vencimiento</label>
-                <input type="date" class="form-control" id="fechaVencimiento" name="fechaVencimiento">
-            </div>
-            <div class="mb-3">
+         
+           <div class="mb-3">
                 <label for="imagen" class="form-label">Imagen</label>
                 <input type="text" class="form-control" id="imagen" name="imagen" maxlength="20">
             </div>
