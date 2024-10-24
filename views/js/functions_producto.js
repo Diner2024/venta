@@ -20,10 +20,28 @@ async function registrarProducto(){
             mode: 'cors',
             cahe: 'no-cache',
             body: datos
-        });
+        })
+        json = await respuesta.json();
+        if (json.status) {
+            swal("Registro", json.mensaje, "success");
+        }else{
+            swal("Registro", json.mensaje, "error");
+        }
+
+        console.log(json);
         console.log(respuesta);
     } catch (e) {
         console.log("Oops ocurrio un error"+e);
     }
-
 }
+async function listar_categoria(){
+    try{
+        let respuesta =await fetch(base_url+'controller/Categoria.php?tipo=listar');
+
+        console.log(respuesta);   
+    } catch (e){
+        console.log("Error al cargar categoria"+e);
+    }
+    }
+
+

@@ -11,4 +11,4 @@ class Conexion{
         return $mysql;
     }
 }
-?> vjghjgh 
+?> 
