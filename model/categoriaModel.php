@@ -1,5 +1,5 @@
 <?php
-require_once "../libreria/conexion.php";
+require_once "../libreria/conexcion.php";
 class CategoriaModel{
 
     private $conexion;
