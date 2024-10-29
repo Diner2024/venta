@@ -37,11 +37,18 @@ async function registrarProducto(){
 async function listar_categoria(){
     try{
         let respuesta =await fetch(base_url+'controller/Categoria.php?tipo=listar');
+        json = await respuesta.json();
+        if (json.status){
+            let datos = json.contenido;
+            datos.FormEach(Element =>{
+                $('#categoria').append($('<option />'),{
+                    Text: `${element.nombre}`,
+                    value: `${element.id}`
+                });
+            });
+        }
 
-        console.log(respuesta);   
     } catch (e){
         console.log("Error al cargar categoria"+e);
     }
     }
-
-
