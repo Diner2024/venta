@@ -62,6 +62,7 @@ async function listar_categoria() {
 
 
 
+//listar provvedor
 //listar proveedores
 async function listar_personas() {
     try {

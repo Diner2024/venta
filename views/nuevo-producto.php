@@ -30,7 +30,7 @@
          
            <div class="mb-3">
                 <label for="imagen" class="form-label">Imagen</label>
-                <input type="text" class="form-control" id="imagen" name="imagen" maxlength="20">
+                <input type="file" class="form-control" id="imagen" name="imagen" maxlength="20">
             </div>
             <div class="mb-3">
                 <label for="idProveedor" class="form-label">Proveedor</label>
