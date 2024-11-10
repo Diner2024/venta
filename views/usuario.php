@@ -54,9 +54,10 @@
             <input type="date" class="form-control" id="fechaReg" name="fechaReg" required>
         </div>
         
-        <button type="button" class="btn btn-success col-6 mx-2" onclick="registrarProducto();">Enviar</button>
+        <button type="button" class="btn btn-success col-6 mx-2" onclick="registrarusuario();">Enviar</button>
     </form>
 </div>
-<script src="<?php BASE_URL;?>views/js/functions_producto.js"></script>
-<script>listar_categoria();</script>
-<script>listar_personas();</script>
+<script src="<?php BASE_URL;?>views/js/functions_usuario.js"></script>
+
+
+

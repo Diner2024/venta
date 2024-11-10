@@ -84,3 +84,6 @@ async function listar_personas() {
         console.log("Error al cargar personas" + e);
     }
 }
+
+
+
