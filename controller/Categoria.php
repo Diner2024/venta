@@ -1,36 +1,14 @@
 <?php
 require_once('../model/categoriaModel.php');
-
 $tipo  = $_REQUEST['tipo'];
+
 
 $objCategoria = new CategoriaModel();
 
-if ($tipo == "registrar") {
-    // print_r($_POST);
-    
-    if ($_POST) {
-        $nombre = $_POST['nombre'];
-        $detalle = $_POST['detalle'];
+     if ($tipo == "listar") {
 
-        if ($nombre == "" || $detalle == "") {
-            $arr_Respuesta = array('status'=> false,'mensaje'=>'Error campos vacios');
-        }else{
-            $arrCategoria = $objCategoria->registrarCategoria($nombre,$detalle);
-            
-            if ($arrCategoria->id>0) {
-                $arr_Respuesta = array('status'=> true,'mensaje'=>'Registro exitoso');
-            }else{
-                $arr_Respuesta = array('status'=> false,'mensaje'=>'Error al registrar categoria');
-            }
-            echo json_encode($arr_Respuesta);
-        }
-    }
-
-}
-
-else if ($tipo == "listar") {
     $arr_Respuesta = array('status' => false, 'contenido' =>'');
-    $arrCategorias = $objCategoria->obtener_Categorias();
+    $arrCategorias = $objCategoria->obtenerCategorias();
 
     if (!empty($arrCategorias)) {
         //recorremos el array para agregar las opciones de la categoria
@@ -45,5 +23,27 @@ else if ($tipo == "listar") {
     }
     echo json_encode($arr_Respuesta);
 }
+if ($tipo=="registrar"){
+    //print_r($_POST);
+
+   if ($_POST) {
+        $nombre = $_POST['nombre'];
+        $detalle = $_POST['detalle'];
+        if($nombre=="" || $detalle==""){
+            $arr_Respuesta = array('status'=>false,'mensaje'=>'Error, campos vacios'); //respuesta
+
+        }else {
+            $arrCategoria = $objCategoria->registrarCategoria($nombre, $detalle);
+
+            if ($arrCategoria->id>0) {
+                $arr_Respuesta = array('status'=>true, 'mensaje'=>'Registro exitoso');
+            }else{
+                $arr_Respuesta = array('status'=>false, 'mensaje'=>'Error al registrar producto');
+            }
+            echo json_encode($arr_Respuesta);
+        }
+    }
+}
+
 
 ?>

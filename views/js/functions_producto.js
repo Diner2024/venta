@@ -7,6 +7,7 @@ async function registrarProducto() {
     let categoria = document.querySelector('#idCategoria').value;
     let imagen = document.querySelector('#imagen').value;
     let proveedor = document.querySelector('#idProveedor').value;
+    
     if (codigo == "" || nombre == "" || detalle == "" || precio == "" || stock == "" || categoria == "" || imagen == "" || proveedor == "") {
         alert("Error, campos vacios");
         return;
@@ -61,29 +62,6 @@ async function listar_categoria() {
 }
 
 
-//listar proveedores
-async function listar_personas() {
-    try {
-        let respuesta = await fetch(base_url+'controller/Proveedor.php?tipo=listar');
-        json = await respuesta.json();
-        if (json.status) {
-            let datos = json.contenido;
-            let contenido_select = '<option value="">Seleccionar</option>';
-            datos.forEach(element => {
-                contenido_select += '<option value="'+ element.rol +'">'+element.razon_social+'</option>';
-             /* $('#idCategoria').append($('<option/>',{
-                  text: ${element.Nombre},
-                  value: ${element.Id},
-                }));    */
-            });
-            document.getElementById('idProveedor').innerHTML = contenido_select;
-        }
-
-        console.log(respuesta);
-    } catch (e) {
-        console.log("Error al cargar personas" + e);
-    }
-}
 
 
 

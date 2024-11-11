@@ -2,12 +2,12 @@
     <h2 class="mb-4">Formulario de usuario</h2>
     <form id="frmRegistrar">
         <div class="mb-3">
-            <label for="numeroIdentidad" class="form-label">NUMERO_IDENTIDAD</label>
-            <input type="text" class="form-control" id="numeroIdentidad" name="numeroIdentidad" maxlength="20" required>
+            <label for="nro_identidad" class="form-label">NUMERO_IDENTIDAD</label>
+            <input type="text" class="form-control" id="nro_identidad" name="nro_identidad" maxlength="20" required>
         </div>
         <div class="mb-3">
-            <label for="razonSocial" class="form-label">RAZON_SOCIAL</label>
-            <input type="text" class="form-control" id="razonSocial" name="razonSocial" maxlength="30" required>
+            <label for="razon_social" class="form-label">RAZON_SOCIAL</label>
+            <input type="text" class="form-control" id="razon_social" name="razon_social" maxlength="30" required>
         </div>
         <div class="mb-3">
             <label for="telefono" class="form-label">TELEFONO</label>
@@ -30,8 +30,8 @@
             <input type="text" class="form-control" id="distrito" name="distrito" required>
         </div>
         <div class="mb-3">
-            <label for="codPostal" class="form-label">COD_POSTAL</label>
-            <input type="text" class="form-control" id="codPostal" name="codPostal" maxlength="10" required>
+            <label for="cod_postal" class="form-label">COD_POSTAL</label>
+            <input type="text" class="form-control" id="cod_postal" name="cod_postal" maxlength="10" required>
         </div>
         <div class="mb-3">
             <label for="direccion" class="form-label">DIRECCION</label>
@@ -50,14 +50,14 @@
             <input type="text" class="form-control" id="estado" name="estado" required>
         </div>
         <div class="mb-3">
-            <label for="fechaReg" class="form-label">FECHA_REG</label>
-            <input type="date" class="form-control" id="fechaReg" name="fechaReg" required>
+            <label for="fecha_reg" class="form-label">FECHA_REG</label>
+            <input type="date" class="form-control" id="fecha_reg" name="fecha_reg" required>
         </div>
         
-        <button type="button" class="btn btn-success col-6 mx-2" onclick="registrarusuario();">Enviar</button>
-    </form>
+        <button type="button" class="mb-3 btn btn-outline-info" onclick="registrarPersona();">Registrar</button>
+</form>
 </div>
-<script src="<?php BASE_URL;?>views/js/functions_usuario.js"></script>
+<script src="<?php BASE_URL;?>views/js/functions_persona.js"></script>
 
 
 
