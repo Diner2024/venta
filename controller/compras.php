@@ -13,15 +13,24 @@ if ($tipo == "registrar") {
 
         if ($id_producto == "" || $cantidad == "" || $precio == "" || $id_trabajador == "") {
             $arr_Respuesta = array('status' => false, 'mensaje' => 'Error: Campos vacíos');
-        } else {
-            $arrCompra = $objCompra->registrarCompra($id_producto, $cantidad, $precio, $id_trabajador);
+        }  else {
+            $arrProducto = $objCompras->registrarCompras(
+                $id_producto,
+                $cantidad,
+                $precio,
+                $trabajador
+            );
 
-            if ($arrCompra->id > 0) {
-                $arr_Respuesta = array('status' => true, 'mensaje' => 'Compra registrada exitosamente');
-            } else {
-                $arr_Respuesta = array('status' => false, 'mensaje' => 'Error al registrar la compra');
-            }
+            if ($arrProducto->id>0) {
+            $arr_Respuesta = array('status'=>true, 'mensaje'=>'Registro exitoso');
+
+        }else{
+            $arr_Respuesta = array('status'=>false, 'mensaje'=>'Error al registrar persona');
         }
-        echo json_encode($arr_Respuesta);
     }
+            echo json_encode($arr_Respuesta);
+
 }
+}
+
+?>

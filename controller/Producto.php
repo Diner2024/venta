@@ -50,12 +50,12 @@ if ($tipo=="registrar"){
 }else if ($tipo == "listar") {
     $arr_Respuesta = array('status' => false, 'contenido' => '');
 
-    $arrProductos = $objProducto->obtenerProductos();
+    $arrProductos = $objProducto->obtener_Productos();
 
     if (!empty($arrProductos)) {
         for ($i = 0; $i < count($arrProductos); $i++) {
             $id = $arrProductos[$i]->id;
-            $nombre = $arrProductos[$i]->nombre;
+            $codigo = $arrProductos[$i]->codigo;
             $nombre = $arrProductos[$i]->nombre;
             $detalle = $arrProductos[$i]->detalle;
             $precio = $arrProductos[$i]->precio;

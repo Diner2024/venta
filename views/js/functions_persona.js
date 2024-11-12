@@ -1,3 +1,4 @@
+//REGISTRAR USUARIO
 async function registrarPersona() {
     let nro_identidad = document.getElementById('nro_identidad').value;
     let razon_social = document.getElementById('razon_social').value;
@@ -12,32 +13,34 @@ async function registrarPersona() {
     let password = document.getElementById('password').value;
     let estado = document.getElementById('estado').value;
     let fecha_reg = document.getElementById('fecha_reg').value;
-
     if (!nro_identidad || !razon_social || !telefono || !correo || !departamento || !provincia || !distrito || !cos_postal || !direccion || !rol || !password || !estado || !fecha_reg) {
         alert("Error, campos vacíos");
         return; 
     }
+try {
+   // capturamos datos del formulario html(nuevaCategoria.php)
+   const datos = new FormData(frmRegistrar);
+   // Enviar datos hacia el controlador
+   let Respuesta = await fetch(base_url+'controller/persona.php?tipo=registrar',{
+       method: 'POST',
+       mode: 'cors',
+       cache: 'no-cache',
+       body: datos
+   });
+   // capturamos la respuesta par / convertido a la variable json
+   json = await Respuesta.json();
+   if (json.status) {
+      swal("Registro", json.mensaje,"success");
+   }else{
+      swal("Registro", json.mensaje,"error");
+   }
 
-    try {
-        const datos = new FormData(frmRegistrar);
-
-        //enviar datos hacia el controlador
-        let respuesta = await fetch(base_url + 'controller/persona.php?tipo=registrar', { //await es una promesa que si o si espera una respuesta
-            method: 'POST',
-            mode: 'cors',
-            cache: 'no-cache',
-            body: datos
-        });
-
-        json = await respuesta.json();
-        if(json.status){
-            swal("Registro", json.mensaje, "success");
-        }else{
-            swal("Registro", json.mensaje, "error");
-        }
-    
-        console.log(json);
-       } catch (e){
-        console.log("Oops, ocurrio un error persona" + e );
-       }
+   console.log(json);
+} catch (e) {
+    console.log("Oops, Ocurrio un error" + e);
 }
+};
+
+
+
+
