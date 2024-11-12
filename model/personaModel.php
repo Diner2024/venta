@@ -9,7 +9,7 @@ class PersonaModel{
         $this-> conexion = $this->conexion->connect();
     }
     
-    public function registrarPersona($nro_identidad, $razon_social, $telefono, $correo, $departamento, $provincia, $distrito, $cos_postal, $direccion,$rol,$password,$estado,$fecha_reg){
+    public function registrarPersona($nro_identidad,$razon_social, $telefono, $correo, $departamento, $provincia, $distrito, $cos_postal, $direccion,$rol,$password,$estado,$fecha_reg){
         $sql = $this->conexion->query("CALL insertpersona('{$nro_identidad}','{$razon_social}','{$telefono}','{$correo}','{$departamento}','{$provincia}','{$distrito}','{$cos_postal}','{$direccion}','{$rol}','{$password}','{$estado}','{$fecha_reg}')");
         $sql = $sql->fetch_object();
         return $sql;

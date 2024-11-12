@@ -26,7 +26,7 @@ if ($_POST) {
     }else {
         $arrPersona = $objPersona->registrarPersona($nro_identidad, $razon_social, $telefono, $correo, $departamento, $provincia, $distrito, $cos_postal, $direccion, $rol, $password, $estado, $fecha_reg);
     //
-        if ($arrPersona->id>0) {
+        if ($arrPersona->id_n>0) {
             $arr_Respuesta = array('status'=>true, 'mensaje'=>'Registro exitoso');
 
         }else{

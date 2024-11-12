@@ -18,7 +18,7 @@ async function registrarPersona() {
         return; 
     }
 try {
-   // capturamos datos del formulario html(nuevaCategoria.php)
+   // capturamos datos del formulario html(nuevaPersona.php)
    const datos = new FormData(frmRegistrar);
    // Enviar datos hacia el controlador
    let Respuesta = await fetch(base_url+'controller/persona.php?tipo=registrar',{
