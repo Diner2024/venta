@@ -1,22 +1,18 @@
 <?php
-require_once "../librerias/conexion.php";
+require_once "../libreria/conexcion.php";
 
-class comprasModel {
-
+class CompraModel {
     private $conexion;
-    
-    function __construct()
-    {
+
+    function __construct() {
         $this->conexion = new Conexion();
         $this->conexion = $this->conexion->connect();
     }
 
-    // Método para registrar una compra
-    public function registrarCompras($id_producto, $cantidad, $precio, $fecha_compra, $id_trabajador) {
-        $sql = $this->conexion->query("CALL insertCompras('{$id_producto}', '{$cantidad}', '{$precio}', '{$fecha_compra}', '{$id_trabajador}')");
+    public function registrarcompra($producto, $cantidad, $precio, $trabajador) {
+        $sql = $this->conexion->query("CALL insertcompras('{$producto}', '{$cantidad}', '{$precio}', '{$trabajador}')");
         $sql = $sql->fetch_object();
         return $sql;
     }
 }
-
 ?>
