@@ -43,8 +43,8 @@
                 <option value="">Seleccione</option>
                 <option value="administrador">Administrador</option>
                 <option value="usuario">Usuario</option>
-                <option value="empleado">Empleado</option>
-                <option value="empleado">proveedor</option>
+                <option value="trabajador">Trabajador</option>
+                <option value="proveedor">proveedor</option>
             </select>
         </div>
         <div class="mb-3">

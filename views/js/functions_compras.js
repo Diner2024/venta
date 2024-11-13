@@ -1,18 +1,17 @@
 async function registrarcompra() {
-    let id_producto = document.getElementById('id_producto').value;
+    let id_producto = document.getElementById('producto').value;
     let cantidad = document.getElementById('cantidad').value;
     let precio = document.getElementById('precio').value;
-    let id_trabajador = document.getElementById('id_trabajador').value;
+    let id_trabajador = document.getElementById('trabajador').value;
 
-    if (id_producto === "" || cantidad === "" || precio === "" || id_trabajador === "") {
-        Swal.fire('Por favor, complete todos los campos.');
+    if (id_producto == "" || cantidad == "" || precio == "" || id_trabajador == "") {
+        swal('Por favor, complete todos los campos.');
         return;
     }
-
     try {
-        const datos = new FormData(document.getElementById('formCompra'));
+        const datos = new FormData(formCompra);
 
-        let respuesta = await fetch(base_url + '/controller/compras.php?tipo=registrar', {
+        let respuesta = await fetch(base_url +'controller/compras.php?tipo=registrar',{
             method: 'POST',
             mode: 'cors',
             cache: 'no-cache',
@@ -22,28 +21,33 @@ async function registrarcompra() {
         let json = await respuesta.json();
 
         if (json.status) {
-            Swal.fire("Registro exitoso", json.mensaje, "success");
+            swal("Registro exitoso", json.mensaje, "success");
         } else {
-            Swal.fire("Registro fallido", json.mensaje, "error");
+            swal("Registro fallido", json.mensaje, "error");
         }
     } catch (error) {
         console.error("Oops, ocurrió un error: " + error);
     }
 }
 
+
+
 async function listar_productos() {
     try {
-        let respuesta = await fetch(base_url + '/controller/producto.php?tipo=listar');
+        let respuesta = await fetch(base_url + 'controller/producto.php?tipo=listar');
         let json = await respuesta.json();
 
         if (json.status) {
             let datos = json.contenido;
+            let conten = '<option value="">Seleccionar</option>';
             datos.forEach(element => {
-                $('#producto').append($('<option />', {
+                conten += '<option value="'+element.id+'">'+element.nombre+'</option>';
+/*                 $('#producto').append($('<option />', {
                     text: `${element.nombre}`, 
                     value: `${element.id}`
-                }));
+                })); */
             });
+            document.getElementById('producto').innerHTML = conten;
         }
         console.log(respuesta);
     } catch (error) {
@@ -51,23 +55,24 @@ async function listar_productos() {
     }
 }
 
-async function listar_trabajadores() {
+//listar proveedores
+async function listar_trabajador(){
     try {
-        let respuesta = await fetch(base_url + '/controller/persona.php?tipo=listarTrabajadores');
-        let json = await respuesta.json();
-        
+        let respuesta1 = await fetch(base_url+'controller/trabajador.php?tipo=listar');
+        json = await respuesta1.json();
         if (json.status) {
-            let datos = json.contenido;
-            datos.forEach(element => {
-                $('#trabajador').append($('<option />', {
-                    text: `${element.razon_social}`, 
-                    value: `${element.id}`
-                }));
+            let datos1 = json.contenido;
+            let contenido_select1 = '<option value="">Seleccionar</option>';
+            datos1.forEach(element => {
+                contenido_select1 += '<option value="'+element.id+'">'+element.razon_social+'</option>';
+             /* $('#idCategoria').append($('<option/>',{
+                  text: `${element.Nombre}`,
+                  value: `${element.Id}`,
+                }));    */
             });
+            document.getElementById('trabajador').innerHTML = contenido_select1;
         }
-        console.log(respuesta);
-        
-    } catch (error) {
-        console.error("Oops, ocurrió un error al listar trabajadores: " + error);
+    } catch (e) {
+        console.log("Error al cargar categoria" + e);
     }
 }

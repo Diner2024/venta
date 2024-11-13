@@ -14,11 +14,11 @@ if ($tipo == "registrar") {
         if ($id_producto == "" || $cantidad == "" || $precio == "" || $id_trabajador == "") {
             $arr_Respuesta = array('status' => false, 'mensaje' => 'Error: Campos vacíos');
         }  else {
-            $arrProducto = $objCompras->registrarCompras(
+            $arrProducto = $objCompra->registrarcompra(
                 $id_producto,
                 $cantidad,
                 $precio,
-                $trabajador
+                $id_trabajador
             );
 
             if ($arrProducto->id>0) {
@@ -32,5 +32,7 @@ if ($tipo == "registrar") {
 
 }
 }
-
+if ($tipo == "listar") {
+    # code...
+}
 ?>

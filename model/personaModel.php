@@ -27,7 +27,7 @@ class PersonaModel{
     //listar trabajaadores
     public function obtener_trabajadores(){
         $arrRespuesta1 = array();
-        $respuesta1 = $this->conexion->query("SELECT * FROM persona WHERE Rol = 'trabajador'");
+        $respuesta1 = $this->conexion->query("SELECT * FROM persona WHERE rol = 'trabajador'");
 
         while ($objeto1 = $respuesta1->fetch_object()) {
             array_push($arrRespuesta1,$objeto1);

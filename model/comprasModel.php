@@ -17,8 +17,8 @@ class CompraModel {
         $sql = $sql->fetch_object();
         return $sql;
     }
-    public function obtener_productos()
-    {
+
+    public function obtener_productos(){
         $arrRespuesta = array();
         $respuesta = $this->conexion->query(" SELECT * FROM producto");
         while ($objeto = $respuesta->fetch_object()) {
