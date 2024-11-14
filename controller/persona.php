@@ -18,12 +18,13 @@ if ($_POST) {
     $cos_postal = $_POST['cos_postal'];
     $direccion = $_POST['direccion'];
     $rol = $_POST['rol'];
-
-    $password = $_POST['password'];
+// Asegúrate de usar la variable correcta para la contraseña
+$password = $_POST['password']; // Cambiado de $dni a $password
+$secure_password = password_hash($password, PASSWORD_DEFAULT); // Hasheando la contraseña
     
     $estado = $_POST['estado'];
     $fecha_reg = $_POST['fecha_reg'];
-    if($nro_identidad=="" || $razon_social=="" || $telefono=="" || $correo=="" || $departamento=="" || $provincia=="" ||  $distrito=="" || $cos_postal=="" || $direccion=="" || $rol=="" || $password=="" || $estado=="" || $fecha_reg==""){
+    if($nro_identidad=="" || $razon_social=="" || $telefono=="" || $correo=="" || $departamento=="" || $provincia=="" ||  $distrito=="" || $cos_postal=="" || $direccion=="" || $rol=="" || $secure_password=="" || $estado=="" || $fecha_reg==""){
         $arr_Respuesta = array('status'=>false,'mensaje'=>'Error, campos vacios'); //respuesta
     }else {
         $arrPersona = $objPersona->registrarPersona($nro_identidad, $razon_social, $telefono, $correo, $departamento, $provincia, $distrito, $cos_postal, $direccion, $rol, $password, $estado, $fecha_reg);

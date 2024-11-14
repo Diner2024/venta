@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión</title>
-    <link rel="stylesheet" href="css/login.css">
+
 </head>
 <body>
     <style>
@@ -232,6 +232,7 @@ form {
  
 
     </style>
+    <script> const base_url = '<?php echo BASE_URL; ?>';</script>
     <div class="dropdown">
                 <button class="dropbtn">Menu</button>
                 <div class="dropdown-content">
@@ -248,25 +249,22 @@ form {
             <img src="https://i.pinimg.com/564x/15/f3/b1/15f3b1dd58c05f61a2f4f1bbe85e9e33.jpg" alt="Descripción de la imagen" class="imagen-pequena">  
     
             <h2>BIENVENIDOS DE VUELTA</h2>
-            <form action="<?php echo BASE_URL ?>inicio">
-                <div class="input-group">
-                    <label for="usuario">USUARIO:</label>
-                    <input type="text" id="usuario" name="usuario" required>
-                </div>
+            <form id="loginForm" method="POST" action="<?php echo BASE_URL ?>inicio">
+                      <div class="input-group">
+                        <label for="usuario" class="form-label">CORREO ELECTRONICO</label> 
+                        <input type="email" class="form-control" id="usuario" placeholder="Ingresa tu Correo" required>
+                    </div>
                 <div class="input-group">
                     <label for="contrasena">CONTRASEÑA:</label>
                     <input type="password" id="contrasena" name="contrasena" required>
                 </div>  
-                <div class="input-group">
-                    <label for="confirmar-contrasena">CONFIRMAR CONTRASEÑA:</label>
-                    <input type="password" id="confirmar-contrasena" name="confirmar-contrasena" required>
-                </div>
+                
                 <button type="submit">INICIAR SESIÓN</button><br>
                 <a href="contraseña.html" class="forgot-password">¿Olvidaste tu contraseña?</a>
                 <p class="no-cuenta">¿TODAVÍA NO TIENES UNA CUENTA? <a href="<?php echo BASE_URL ?>registrate">REGISTRARSE</a></p>
             </form>
 
-    
+            <script src="<?php BASE_URL;?>views/js/funtions_login.js">  </script>
 </body>
 </html>
 
