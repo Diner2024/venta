@@ -195,9 +195,54 @@ form {
     font-size: 18px;
     font-weight: bold;
   }
+  /*.....*/
+  .dropdown {
+            position: relative;
+            display: inline-block;
+            
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 5;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 15px 15px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
  
 
     </style>
+    <div class="dropdown">
+                <button class="dropbtn">Menu</button>
+                <div class="dropdown-content">
+                    <a href="<?php echo BASE_URL ?>Categorías">Categorías</a>
+                    <a href="<?php echo BASE_URL ?>compras">Compras</a>
+                    <a href="<?php echo BASE_URL ?>persona">Persona</a>
+                    <a href="<?php echo BASE_URL ?>Producto">Producto</a>
+                    <a href="<?php echo BASE_URL ?>Proveedor">Proveedor</a>
+                    <a href="<?php echo BASE_URL ?>Trabajador">Trabajador</a>
+                </div>
+            </div>
     <div class="container">
         <div class="login-box">
             <img src="https://i.pinimg.com/564x/15/f3/b1/15f3b1dd58c05f61a2f4f1bbe85e9e33.jpg" alt="Descripción de la imagen" class="imagen-pequena">  
@@ -220,9 +265,7 @@ form {
                 <a href="contraseña.html" class="forgot-password">¿Olvidaste tu contraseña?</a>
                 <p class="no-cuenta">¿TODAVÍA NO TIENES UNA CUENTA? <a href="<?php echo BASE_URL ?>registrate">REGISTRARSE</a></p>
             </form>
-        </div>
-    </div>
-    
+
     
 </body>
 </html>
