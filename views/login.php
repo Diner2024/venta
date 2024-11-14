@@ -251,12 +251,12 @@ form {
             <h2>BIENVENIDOS DE VUELTA</h2>
             <form id="loginForm" method="POST" action="<?php echo BASE_URL ?>inicio">
                       <div class="input-group">
-                        <label for="usuario" class="form-label">CORREO ELECTRONICO</label> 
-                        <input type="email" class="form-control" id="usuario" placeholder="Ingresa tu Correo" required>
+                        <label for="usuario" class="form-label">usuario</label> 
+                        <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Ingresa tu Usuario" required>
                     </div>
                 <div class="input-group">
                     <label for="contrasena">CONTRASEÑA:</label>
-                    <input type="password" id="contrasena" name="contrasena" required>
+                    <input type="password" id="password" name="password" required>
                 </div>  
                 
                 <button type="submit">INICIAR SESIÓN</button><br>

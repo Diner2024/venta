@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="es">
@@ -190,6 +191,12 @@ background: #5ea7f5;
       
       <li class="nav-item">
         <a class="nav-link" href="<?php echo BASE_URL ?>ubicacion">UBICACIÓN</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"><a onclick="cerrar_sesion();">cerrar sesion</a>
+        <li class="nav-item">
+        <a class="nav-link"><a>cerrar sesion</a>
+      </li>
       </li>
       
     </ul>
