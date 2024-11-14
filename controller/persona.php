@@ -18,7 +18,9 @@ if ($_POST) {
     $cos_postal = $_POST['cos_postal'];
     $direccion = $_POST['direccion'];
     $rol = $_POST['rol'];
+
     $password = $_POST['password'];
+    
     $estado = $_POST['estado'];
     $fecha_reg = $_POST['fecha_reg'];
     if($nro_identidad=="" || $razon_social=="" || $telefono=="" || $correo=="" || $departamento=="" || $provincia=="" ||  $distrito=="" || $cos_postal=="" || $direccion=="" || $rol=="" || $password=="" || $estado=="" || $fecha_reg==""){
