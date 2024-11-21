@@ -9,6 +9,17 @@ class ProductoModel{
         $this->conexion =  $this->conexion->connect();
 
     }
+     
+
+public function obtenerproductos(){
+    $arrRespuesta = array();
+    $respuesta = $this->conexion->query("SELECT * FROM producto");
+
+    while ($objeto = $respuesta->fetch_object()) {
+        array_push($arrRespuesta,$objeto);
+    }
+   return $arrRespuesta;
+}
 
 
     public function registrarProducto($codigo, $nombre, $detalle, $precio,

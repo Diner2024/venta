@@ -11,6 +11,7 @@ $objCategoria = new CategoriaModel();
     $arrCategorias = $objCategoria->obtenerCategorias();
 
     if (!empty($arrCategorias)) {
+
         //recorremos el array para agregar las opciones de la categoria
         for ($i=0; $i < count($arrCategorias); $i++) { 
             $id_categoria = $arrCategorias[$i]-> id;
@@ -19,7 +20,8 @@ $objCategoria = new CategoriaModel();
             $arrCategorias [$i] -> options = $opciones;
         }
         $arr_Respuesta['status'] = true;
-        $arr_Respuesta['contenido'] = $arrCategorias;
+        $arr_Respuesta['contenido'] = 
+        $arrCategorias;
     }
     echo json_encode($arr_Respuesta);
 }

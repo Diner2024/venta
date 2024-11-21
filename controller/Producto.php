@@ -1,9 +1,51 @@
 <?php
 require_once('../model/productoModel.php');
+require_once('../model/categoriaModel.php');
+require_once('../model/personaModel.php');
+
 $tipo = $_REQUEST['tipo'];
 
 //instancio la clase modeloProducto
 $objProducto = new ProductoModel();
+$objCategoria = new CategoriaModel();
+
+
+if ($tipo == "listar") {
+    $arr_Respuesta = array('status' => false, 'contenido' => '');
+
+    $arrProductos = $objProducto->obtener_Productos();
+ 
+
+    if (!empty($arrProductos)) {
+    
+        for ($i = 0; $i < count($arrProductos); $i++) {
+            $id_categoria = $arrProductos[$i]->id_categoria;
+            $r_categoria = $objCategoria->obtener_categorias_id($id_categoria);
+            $arrProductos[$i]->categoria=$r_categoria;
+
+
+            $id = $arrProductos[$i]->id;
+            $codigo = $arrProductos[$i]->codigo;
+            $nombre = $arrProductos[$i]->nombre;
+            $detalle = $arrProductos[$i]->detalle;
+            $precio = $arrProductos[$i]->precio;
+            $stock = $arrProductos[$i]->stock;
+            $id_categoria = $arrProductos[$i]->id_categoria;
+            $imagen = $arrProductos[$i]->imagen;
+            $id_proveedor = $arrProductos[$i]->id_proveedor;
+            $opciones = ' <a href="nuevopersona"><button class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></button><a>
+                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>';
+            $arrProductos [$i] -> options = $opciones;
+        }
+        $arr_Respuesta['status'] = true;
+        $arr_Respuesta['contenido'] = $arrProductos;
+    }
+
+    echo json_encode($arr_Respuesta);
+}
+
+
+
 
 if ($tipo=="registrar"){
     //print_r($_POST);
@@ -47,31 +89,7 @@ if ($tipo=="registrar"){
             echo json_encode($arr_Respuesta);
         }
     }
-}else if ($tipo == "listar") {
-    $arr_Respuesta = array('status' => false, 'contenido' => '');
+}else 
 
-    $arrProductos = $objProducto->obtener_Productos();
 
-    if (!empty($arrProductos)) {
-        for ($i = 0; $i < count($arrProductos); $i++) {
-            $id = $arrProductos[$i]->id;
-            $codigo = $arrProductos[$i]->codigo;
-            $nombre = $arrProductos[$i]->nombre;
-            $detalle = $arrProductos[$i]->detalle;
-            $precio = $arrProductos[$i]->precio;
-            $stock = $arrProductos[$i]->stock;
-            $id_categoria = $arrProductos[$i]->id_categoria;
-            $imagen = $arrProductos[$i]->imagen;
-            $id_proveedor = $arrProductos[$i]->id_proveedor;
-            
-
-            $opciones = '<a href="" class="btn btn-success"><i class="fa fa-pencil" aria-hidden="true"></i></a>';
-            $arrProductos [$i] -> options = $opciones;
-        }
-        $arr_Respuesta['status'] = true;
-        $arr_Respuesta['contenido'] = $arrProductos;
-    }
-
-    echo json_encode($arr_Respuesta);
-}
 ?>

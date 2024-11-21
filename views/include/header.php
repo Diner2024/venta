@@ -133,12 +133,7 @@ background-color: hsl(114, 93%, 48%);
 }
 button {
     color: red;
-background: #5ea7f5;
 
-    box-shadow: 0 0 5px #03e9f4,
-    0 0 25px #03e9f4,
-    0 0 50px #03e9f4,
-    0 0 100px #03e9f4;
 }
 
 
@@ -195,7 +190,6 @@ background: #5ea7f5;
       <li class="nav-item">
         <a class="nav-link"><a onclick="cerrar_sesion();">cerrar sesion</a>
         <li class="nav-item">
-        <a class="nav-link"><a>cerrar sesion</a>
       </li>
       </li>
       
