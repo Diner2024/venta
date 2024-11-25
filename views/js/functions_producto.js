@@ -1,3 +1,40 @@
+async function listarproductos() {
+    try {
+        let respuesta = await fetch(base_url + 'controller/Producto.php?tipo=listar');
+
+        json = await respuesta.json();
+        if (json.status) {
+            let datos = json.contenido;
+            let cont = 0;
+            datos.forEach(item =>{
+                let nueva_fila = document.createElement("tr");
+                nueva_fila.id = "fila"+item.id;
+                cont++;
+                nueva_fila.innerHTML = `
+                           <th>${cont}</th>
+                           <td>${item.codigo}</td>
+                           <td>${item.nombre}</td>
+                           <td>${item.stock}</td>
+                           <td>${item.categoria.nombre}</td>
+                           <td>${item.id_proveedor}</td>
+                           <td>${item.options}</td>
+                        
+                `;
+                document.querySelector('#tbl_productos').appendChild(nueva_fila);
+                console.log(nueva_fila);
+            });
+        }
+        console.log(json);
+    } catch (error) {
+     console.log("Ooops salio un error "+error);
+    }
+}
+if (document.querySelector('#tbl_productos')){
+    listarproductos();
+}
+
+
+
 async function registrarProducto() {
     let codigo = document.getElementById('codigo').values;
     let nombre = document.querySelector('#nombre').value;
@@ -60,6 +97,7 @@ async function listar_categoria() {
         console.log("Error al cargar categoria" + e);
     }
 }
+
 
 
 

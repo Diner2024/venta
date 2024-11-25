@@ -26,12 +26,10 @@
         </select>
     </div>
 
-    <button type="button" class="btn btn-warning" onclick="registrarcompra()">Agregar Compra</button>
+    <button type="button" class="btn btn-warning" onclick="registrarcompra();">Agregar Compra</button>
 </form>
 
-<script src="<?php echo BD_URL ?>views/js/functions_compras.js"></script>
+<script src="<?php echo BASE_URL;?>views/js/functions_compras.js"></script>
 
-<script>
-    listar_productos();
-    listar_trabajadores();
-</script>
+<script>listar_productos();</script>
+<script>listar_trabajador();</script>
