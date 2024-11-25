@@ -50,4 +50,43 @@ switch ($tipo) {
 
     // Otros casos como listar, editar, etc. pueden ir aquí
 }
+
+if ($tipo=="listar") {
+    $arr_respuesta = array('status'=>false,'contenido'=>'');
+    $arr_proveedor =  $objPersona->obtener_proveedor();
+
+    if (!empty($arr_proveedor)) {
+        
+        for ($i=0; $i < count($arr_proveedor); $i++) { 
+            $rol_persona = $arr_proveedor[$i]->rol;
+            $persona = $arr_proveedor[$i]->razon_social;
+            $opciones = '';
+            $arr_proveedor[$i]->options = $opciones;
+        }
+        $arr_respuesta['status'] = true;
+        $arr_respuesta['contenido'] = $arr_proveedor;
+    }
+    //$arr_respuesta['contenido']=$arr_proveedor;
+    echo json_encode($arr_respuesta);
+
+}
+if ($tipo=="listar") {
+    $arr_respuesta = array('status'=>false,'contenido'=>'');
+    $arr_Trabajador =  $objPersona->obtener_trabajador();
+
+    if (!empty($arr_Trabajador)) {
+        
+        for ($i=0; $i < count($arr_Trabajador); $i++) { 
+            $rol_persona = $arr_Trabajador[$i]->rol;
+            $persona = $arr_Trabajador[$i]->razon_social;
+            $opciones = '';
+            $arr_Trabajador[$i]->options = $opciones;
+        }
+        $arr_respuesta['status'] = true;
+        $arr_respuesta['contenido'] = $arr_Trabajador;
+    }
+    //$arr_respuesta['contenido']=$arr_proveedor;
+    echo json_encode($arr_respuesta);
+
+}
 ?>
