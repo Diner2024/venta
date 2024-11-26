@@ -7,7 +7,6 @@ class ProductoModel{
     {
         $this->conexion =  new Conexion();
         $this->conexion =  $this->conexion->connect();
-
     }
      
 
@@ -23,13 +22,12 @@ public function obtenerproductos(){
 
 
     public function registrarProducto($codigo, $nombre, $detalle, $precio,
-     $stock, $categoria, $imagen, $proveedor){
+     $stock, $categoria, $imagen, $proveedor,$tipoarchivo){
         $sql = $this->conexion->query("CALL insertproducto('{$codigo}',
         '{$nombre}','{$detalle}','{$precio}','{$stock}','{$categoria}',
-        '{$imagen}','{$proveedor}')");
+        '{$imagen}','{$proveedor}','{$tipoarchivo}')");
         $sql = $sql->fetch_object();
         return $sql;
-
     }
 
     public function actualizar_imagen($id,$imagen){
@@ -46,6 +44,13 @@ public function obtener_productos(){
     }
    return $arrRespuesta;
 }
+
+public function obtener_productosId($id){
+    $consulta = $this->conexion->query("SELECT * FROM producto WHERE id ='{$id}' ");
+    $resultado = $consulta->fetch_object();
+    return $resultado;
+}
+
 } 
 ?>
 

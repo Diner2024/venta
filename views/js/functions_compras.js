@@ -1,3 +1,41 @@
+//listar compras
+async function listar_compras() {
+    try {
+        let respuesta = await fetch(base_url+'controller/compras.php?tipo=listar');
+        let json = await respuesta.json();
+        if (json.status) {
+            let datos = json.contenido;
+            let cont = 0;
+            datos.forEach(item=>{
+                let nueva_fila = document.createElement("tr");
+                nueva_fila.id = "fila"+item.id; // id anuevo asignado-------------id de la BD
+                cont+=1;
+                nueva_fila.innerHTML = `
+                <th>${cont}</th> 
+                <td>${item.producto.nombre}</td>
+                <td>${item.cantidad}</td>
+                <td>${item.precio}</td>
+                <td>${item.usuario.razon_social}</td>
+                <td>${item.options}</td>
+        `;
+        document.querySelector('#body_compras').appendChild(nueva_fila);
+            });
+        }else{
+            swal("No se encontraron productos.");
+        }
+        console.log(json);
+    } catch (error) {
+        console.log("Oops salio un error "+error);
+    }
+
+}
+
+if (document.querySelector('#tbl_compras')) {
+    listar_compras();
+}
+
+
+//registrar compras
 async function registrarcompra() {
     let id_producto = document.getElementById('producto').value;
     let cantidad = document.getElementById('cantidad').value;
@@ -58,7 +96,7 @@ async function listar_productos() {
 //listar proveedores
 async function listar_trabajador(){
     try {
-        let respuesta1 = await fetch(base_url+'controller/trabajador.php?tipo=listar');
+        let respuesta1 = await fetch(base_url+'controller/persona.php?tipo=listarTrabajador');
         json = await respuesta1.json();
         if (json.status) {
             let datos1 = json.contenido;

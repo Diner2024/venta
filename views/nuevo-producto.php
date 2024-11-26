@@ -41,6 +41,7 @@
             <button type="button" class="btn btn-success col-6 mx-2" onclick="registrarProducto();">Enviar</button>
         </form>
     </div>
-    <script src="<?php BASE_URL;?>views/js/functions_producto.js">  </script>
+    <script src="<?php BASE_URL;?>views/js/functions_producto.js"></script>
     <script>listar_categoria();</script>
-    <script>listar_personas();</script>
+    <script>listar_proveedores();</script>
+    

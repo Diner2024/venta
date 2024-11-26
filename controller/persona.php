@@ -38,3 +38,74 @@ if ($tipo == "registrar") {
         echo json_encode($arr_Respuesta);
     }
 }
+
+//listar persona
+if ($tipo == "listar_personas") {
+    $arr_Respuesta = array('status' => false, 'contenido' => '');
+    $arrPersona = $objPersona->obtenerPersona();
+
+    if (!empty($arrPersona)) {
+        for ($i = 0; $i < count($arrPersona); $i++) {
+
+            $id_persona =  $arrPersona[$i]->id;
+            $nro_identidad =  $arrPersona[$i]->nro_identidad;
+            $razon_social =  $arrPersona[$i]->razon_social;
+            $telefono =  $arrPersona[$i]->telefono;
+            $correo =  $arrPersona[$i]->correo;
+            $departamento =  $arrPersona[$i]->departamento;
+            $cod_postal =  $arrPersona[$i]->cod_postal;
+            $direccion =  $arrPersona[$i]->direccion;
+            $rol =  $arrPersona[$i]->rol;
+
+            $opciones = '<button class="btn btn-primary btn-sm">editar<i class="fas fa-edit"></i></button>
+                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash-alt">eliminar</i></button>';
+            $arrPersona[$i]->options = $opciones;
+        }
+        $arr_Respuesta['status'] = true;
+        $arr_Respuesta['contenido'] =  $arrPersona;
+    }
+    echo json_encode($arr_Respuesta); //convertir en formato -- 
+}
+
+//listar proveedor
+if ($tipo=="listarProveedor") {
+    $arr_respuesta = array('status'=>false,'contenido'=>'');
+    $arr_proveedor =  $objPersona->obtener_proveedores();
+
+    if (!empty($arr_proveedor)) {
+        
+        for ($i=0; $i < count($arr_proveedor); $i++) { 
+            $id = $arr_proveedor[$i]->id;
+            $persona = $arr_proveedor[$i]->razon_social;
+            $opciones = '';
+            $arr_proveedor[$i]->options = $opciones;
+        }
+        $arr_respuesta['status'] = true;
+        $arr_respuesta['contenido'] = $arr_proveedor;
+    }
+    //$arr_respuesta['contenido']=$arr_proveedor;
+    echo json_encode($arr_respuesta);
+
+}
+
+
+//obtener_trabajadores
+if ($tipo=="listarTrabajador") {
+    $arr_respuesta = array('status'=>false,'contenido'=>'');
+    $arr_Trabajador =  $objPersona->obtener_trabajadores();
+
+    if (!empty($arr_Trabajador)) {
+        
+        for ($i=0; $i < count($arr_Trabajador); $i++) { 
+            $rol_persona = $arr_Trabajador[$i]->rol;
+            $persona = $arr_Trabajador[$i]->razon_social;
+            $opciones = '';
+            $arr_Trabajador[$i]->options = $opciones;
+        }
+        $arr_respuesta['status'] = true;
+        $arr_respuesta['contenido'] = $arr_Trabajador;
+    }
+    //$arr_respuesta['contenido']=$arr_proveedor;
+    echo json_encode($arr_respuesta);
+
+}

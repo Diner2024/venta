@@ -97,7 +97,27 @@ async function listar_categoria() {
         console.log("Error al cargar categoria" + e);
     }
 }
-
+async function listar_proveedores(){
+    try {
+        let respuesta = await fetch(base_url + 'controller/persona.php?tipo=listarProveedor');
+        json = await respuesta.json();
+        if (json.status) {
+            let datos = json.contenido;
+            let contenido_select = '<option value="">Seleccione</option>';
+            datos.forEach(element => {
+                contenido_select += '<option value="'+element.id+'">'+element.razon_social+'</option>';
+                /*$('#categoria').append($('<option />',{
+                    text:${element.nombre},
+                    value:${element.id}
+                }));*/
+            });
+            document.getElementById('idProveedor').innerHTML = contenido_select;
+        }
+        console.log(respuesta);
+    } catch (e) {
+        console.log("Error  al cargar proveedor " + e);
+    }
+}
 
 
 

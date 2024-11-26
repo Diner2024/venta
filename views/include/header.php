@@ -187,11 +187,8 @@ button {
       <li class="nav-item">
         <a class="nav-link" href="<?php echo BASE_URL ?>ubicacion">UBICACIÓN</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link"><a onclick="cerrar_sesion();">cerrar sesion</a>
-        <li class="nav-item">
-      </li>
-      </li>
+        <p class="nav-link" type="button" style="color:blue"><a onclick="cerrar_sesion();">cerrar sesion</p>
+
       
     </ul>
   </div>
