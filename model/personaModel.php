@@ -14,6 +14,24 @@ class PersonaModel{
         $sql = $sql->fetch_object();
         return $sql;
      }
+     
+     public function buscarPersonaPorDNI($nro_identidad){
+        $sql = $this->conexion->query("SELECT * FROM persona WHERE 
+        nro_identidad ='{$nro_identidad}'");
+        $sql = $sql->fetch_object();
+        return $sql;
+    }
+    
+    
+    public function obtenerPersona(){
+        $arrRespuesta = array();
+        $respuesta = $this->conexion->query("SELECT * FROM persona");
+        while ($objeto = $respuesta->fetch_object()) {
+            array_push($arrRespuesta,$objeto);
+            
+        }
+        return $arrRespuesta;
+    }
      //listar proveedores
      public function obtener_proveedores(){
         $arrRespuestaa = array();
@@ -24,6 +42,14 @@ class PersonaModel{
         }
         return $arrRespuestaa;
     }
+
+//obtener proveedor por id
+    public function obtener_proveedor_id($id){
+        $respuesta = $this->conexion->query("SELECT *FROM persona WHERE id='{$id}'");
+        $objeto = $respuesta->fetch_object();
+        return $objeto;
+    }
+
     //listar trabajaadores
     public function obtener_trabajadores(){
         $arrRespuesta1 = array();
@@ -35,12 +61,8 @@ class PersonaModel{
         return $arrRespuesta1;
     }
 
-    public function buscarPersonaPorDNI($nro_identidad){
-        $sql = $this->conexion->query("SELECT * FROM persona WHERE 
-        nro_identidad ='{$nro_identidad}'");
-        $sql = $sql->fetch_object();
-        return $sql;
-    }
+    
+    
    
 }
 ?>
