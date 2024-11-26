@@ -14,8 +14,11 @@ class PersonaModel{
         $sql = $sql->fetch_object();
         return $sql;
      }
+<<<<<<< HEAD
 
      //buscar persona por dni
+=======
+>>>>>>> 1fa85da269eca86cb10af28c069463582cfb075e
      
      public function buscarPersonaPorDNI($nro_identidad){
         $sql = $this->conexion->query("SELECT * FROM persona WHERE 
@@ -24,6 +27,7 @@ class PersonaModel{
         return $sql;
     }
     
+<<<<<<< HEAD
     //obtener persona
     public function obtenerPersona(){
     $arrRespuesta = array();
@@ -34,6 +38,18 @@ class PersonaModel{
     }
     return $arrRespuesta;
 }
+=======
+    
+    public function obtenerPersona(){
+        $arrRespuesta = array();
+        $respuesta = $this->conexion->query("SELECT * FROM persona");
+        while ($objeto = $respuesta->fetch_object()) {
+            array_push($arrRespuesta,$objeto);
+            
+        }
+        return $arrRespuesta;
+    }
+>>>>>>> 1fa85da269eca86cb10af28c069463582cfb075e
      //listar proveedores
      public function obtener_proveedores(){
         $arrRespuestaa = array();
@@ -45,6 +61,7 @@ class PersonaModel{
         return $arrRespuestaa;
     }
 
+<<<<<<< HEAD
 
 //listar proveedores por id
 public function obtener_proveedor_id($id){
@@ -52,6 +69,14 @@ public function obtener_proveedor_id($id){
     $objeto = $respuesta->fetch_object();
     return $objeto;
 }
+=======
+//obtener proveedor por id
+    public function obtener_proveedor_id($id){
+        $respuesta = $this->conexion->query("SELECT *FROM persona WHERE id='{$id}'");
+        $objeto = $respuesta->fetch_object();
+        return $objeto;
+    }
+>>>>>>> 1fa85da269eca86cb10af28c069463582cfb075e
 
     //listar trabajaadores
     public function obtener_trabajadores(){
@@ -62,12 +87,18 @@ public function obtener_proveedor_id($id){
         }
         return $arrRespuesta1;
     }
+<<<<<<< HEAD
 //listar trabajaadores por id
     public function obtener_trabajador_id($id){
         $respuesta = $this->conexion->query("SELECT *FROM persona WHERE id='{$id}'");
         $objeto = $respuesta->fetch_object();
         return $objeto;
     }
+=======
+
+    
+    
+>>>>>>> 1fa85da269eca86cb10af28c069463582cfb075e
    
 }
 ?>
