@@ -1,4 +1,7 @@
 <?php
+
+use function PHPSTORM_META\sql_injection_subst;
+
 require_once "../libreria/conexcion.php";
 class ProductoModel{
 
@@ -50,7 +53,13 @@ public function obtener_productosId($id){
     $resultado = $consulta->fetch_object();
     return $resultado;
 }
-
+public function verProducto($id){
+    $sql = $this->conexion->query("SELECT * FROM producto WHERE id='$id'");
+    $sql = $sql->fetch_object();
+    return $sql;
+}
 } 
+
+
 ?>
 

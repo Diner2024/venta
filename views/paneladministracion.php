@@ -6,6 +6,7 @@
             height: 100%;
             margin: 0;
             padding: 0;
+            background-color: #d5d3d4;
         }
         .admin-container {
             min-height: calc(100vh - 140px); /* Adjust for header and footer */
@@ -88,6 +89,7 @@
                                     <i class="fas fa-users"></i> Ver usuarios
                                 </div>
                             </a>
+                            
                         </div>
                         
                     </div>

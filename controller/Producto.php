@@ -18,6 +18,7 @@ if ($tipo == "listar") {
  
 
     if (!empty($arrProductos)) {
+        ///recoremois el array para agegara las opciones  
     
         for ($i = 0; $i < count($arrProductos); $i++) {
             $id_categoria = $arrProductos[$i]->id_categoria;
@@ -34,9 +35,8 @@ if ($tipo == "listar") {
             $id_categoria = $arrProductos[$i]->id_categoria;
             $imagen = $arrProductos[$i]->imagen;
             $id_proveedor = $arrProductos[$i]->id_proveedor;
-            $opciones = ' <a href="nuevopersona"><button class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></button><a>
-                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>';
-            $arrProductos [$i] -> options = $opciones;
+            $opciones = '<a href="'.BASE_URL.'editarproducto/'.$id.'">Editar</a><button onclick="eliminar_producto('.$id.');">Eliminar</button>';
+            $arrProductos[$i]->opciones = $opciones;
         }
         $arr_Respuesta['status'] = true;
         $arr_Respuesta['contenido'] = $arrProductos;
@@ -44,8 +44,6 @@ if ($tipo == "listar") {
 
     echo json_encode($arr_Respuesta);
 }
-
-
 
 
 if ($tipo=="registrar"){
@@ -87,6 +85,27 @@ if ($tipo=="registrar"){
         }
     }
 }
+if ($tipo=="ver"){
+    //print_r($_POST);
+    $id_producto = $_POST['id_producto'];
+    $arr_Respuesta = $objProducto->verProducto
+    ($id_producto);
+    print_r($arr_Respuesta);
+    //print_r($arr_respuesta);
+    if(empty($arr_Respuesta)){
+        $response = array('status'=>false, 'mensaje'=>"Error no hay informacion");
+    }else {
+        $arr_Respuesta = array('status' => true, 'mensaje' => "datos encontardos",'contenido'=> $arr_Respuesta);
+    }
+    echo json_encode($response);
+}
 
+if ($tipo=="actualizar"){
+    //print_r($_POST);
+}
+
+if ($tipo=="aliminar"){
+    //print_r($_POST);
+}
 
 ?>

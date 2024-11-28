@@ -18,8 +18,5 @@
 
         </tbody>
     </table>
-</div>
+</div><script>listar_personas();</script>
 <script src="<?php echo BASE_URL?>views/js/functions_persona.js"></script>
-<script>
-    listar_personas();
-</script>

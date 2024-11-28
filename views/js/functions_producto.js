@@ -17,7 +17,7 @@ async function listarproductos() {
                            <td>${item.stock}</td>
                            <td>${item.categoria.nombre}</td>
                            <td>${item.id_proveedor}</td>
-                           <td>${item.options}</td>
+                           <td>${item.opciones}</td>
                         
                 `;
                 document.querySelector('#tbl_productos').appendChild(nueva_fila);
@@ -119,6 +119,43 @@ async function listar_proveedores(){
     }
 }
 
+
+async function ver_producto(id) {
+    const FormData = new FormData();
+    formData.append('id_producto', id);
+    try {
+        let respuesta = await fetch(base_url+'controller/Producto.php?tipo=Ver',{
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no_cache',
+            body: 'formData',  
+        });
+        json = await respuesta.json();
+        if (json.status){
+            document.querySelector('#codigo').value 
+            = json.contenido.codigo;
+            document.querySelector('#nombre').value 
+            = json.contenido.nombre;
+            document.querySelector('#detalle').value 
+            = json.contenido.detalle;
+            document.querySelector('#precio').value 
+            = json.contenido.precio;
+            document.querySelector('#stock').value 
+            = json.contenido.stock;
+            document.querySelector('#idCategoria').value 
+            = json.contenido.idCategoria;
+            document.querySelector('#idProveedor').value 
+            = json.contenido.idProveedor;
+        }else{
+            window.location = base_url+"productos";
+        }
+
+        console.log(json);
+    } catch (error) {
+        console.log("oops ocurrio un error "+error);
+    }
+    
+}
 
 
 

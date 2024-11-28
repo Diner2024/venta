@@ -8,101 +8,124 @@
   <title>TIENDA DE CALZADOS </title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #333;
-    background-color: #f4f4f4;
+body { 
+    margin: 0; 
+    padding: 0; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    font-size: 1rem; 
+    line-height: 1.5; 
+    color: #333; 
+    background-color: #f4f4f4; 
+} 
+
+.navbar { 
+    background-color: #a0a0a0; 
+    transition: background-color 0.3s ease; 
 }
 
-.navbar {
-    background-color: #dbdbdb;
-    transition: background-color 0.3s ease;
+.navbar-brand img { 
+    height: 60px; 
+    width: 60px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 3px solid #ffffff; 
+    transition: transform 0.3s ease; 
+} 
+
+.navbar-brand img:hover { 
+    transform: scale(1.1); 
+} 
+
+.navbar-nav .nav-link { 
+    color: #ffffff; 
+    transition: color 0.3s ease; 
 }
 
-.navbar-brand img {
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #ffffff;
-    transition: transform 0.3s ease;
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link.active { 
+    color: #ffd700; 
 }
 
-.navbar-brand img:hover {
-    transform: scale(1.1);
+.product img { 
+    width: 100%; 
+    height: auto; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+} 
+
+.footer { 
+    background-color: #a0a0a0; 
+    color: #ecf0f1; 
+    padding: 20px 0; 
 }
 
-.navbar-nav .nav-link {
-    color: #ffffff;
-    transition: color 0.3s ease;
+.footer a { 
+    color: #3498db; 
+    transition: color 0.3s ease; 
 }
 
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link.active {
-    color: #ffd700;
+.footer a:hover { 
+    color: #2ecc71; 
 }
 
-.product img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+.btn-primary { 
+    background-color: #3498db; 
+    border-color: #2980b9; 
+    color: #ffffff; 
+    transition: all 0.3s ease; 
 }
 
-.footer {
-    background-color: #2c3e50;
-    color: #ecf0f1;
-    padding: 20px 0;
+.btn-primary:hover { 
+    background-color: #2980b9; 
+    transform: translateY(-2px); 
 }
 
-.footer a {
-    color: #3498db;
-    transition: color 0.3s ease;
+.dropdown-menu { 
+    background-color: #ffffff; 
+    border: 1px solid #e0e0e0; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+    display: none; 
+    position: absolute; 
+    top: 100%; 
+    left: 0; 
+    min-width: 200px; 
+    z-index: 1000; 
 }
 
-.footer a:hover {
-    color: #2ecc71;
+.dropdown-item { 
+    color: #333; 
+    transition: background-color 0.3s ease; 
 }
 
-.btn-primary {
-    background-color: #3498db;
-    border-color: #2980b9;
-    color: #ffffff;
-    transition: all 0.3s ease;
+.dropdown-item:hover { 
+    background-color: #f4f4f4; 
+    color: #3498db; 
 }
 
-.btn-primary:hover {
-    background-color: #2980b9;
-    transform: translateY(-2px);
+/* Show the submenu when hovering over the parent item */
+.navbar-nav .nav-item:hover .dropdown-menu { 
+    display: block; 
 }
 
-.dropdown-menu {
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.dropdown-item {
-    color: #333;
-    transition: background-color 0.3s ease;
-}
-
-.dropdown-item:hover {
-    background-color: #f4f4f4;
-    color: #3498db;
+/* Make sure the submenu items align correctly */
+.navbar-nav .nav-item { 
+    position: relative; 
 }
 
 /* Responsive Adjustments */
-@media (max-width: 768px) {
-    .navbar-brand img {
-        height: 50px;
-        width: 50px;
-    }
+@media (max-width: 768px) { 
+    .navbar-brand img { 
+        height: 50px; 
+        width: 50px; 
+    } 
 }
+
+/* Ensure links are styled consistently */
+a {
+    color: #fff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
   </style>
 
 <script>
@@ -135,8 +158,6 @@ body {
           <li><a class="dropdown-item" href="<?php echo BASE_URL ?>niños">NIÑOS</a>
           </li> 
         </ul> 
-      
-      
           <li class="nav-item">
         <a class="nav-link" href="<?php echo BASE_URL ?>novedades">NOVEDADES</a>
       </li>

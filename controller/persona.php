@@ -56,10 +56,6 @@ if ($tipo == "listar_personas") {
             $cod_postal =  $arrPersona[$i]->cod_postal;
             $direccion =  $arrPersona[$i]->direccion;
             $rol =  $arrPersona[$i]->rol;
-
-            $opciones = '<button class="btn btn-primary btn-sm">editar<i class="fas fa-edit"></i></button>
-                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash-alt">eliminar</i></button>';
-            $arrPersona[$i]->options = $opciones;
         }
         $arr_Respuesta['status'] = true;
         $arr_Respuesta['contenido'] =  $arrPersona;
