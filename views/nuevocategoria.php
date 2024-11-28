@@ -12,6 +12,9 @@
         <input type="text" id="detalle" name="detalle" class="form-control" required>
     </div>
     <button type="button" class="mb-3 btn btn-outline-info" onclick="registrar_categoria();"><i class="bi bi-check-circle"></i>Registrar</button>
+    <div class="col text-center">
+                <a href="<?php echo BASE_URL ?>paneladministracion" class="btn btn-secondary">VOLVER A LA PAGINA PRINCIPAL</a>
+            </div>
 </form>
 </div>
 <script src="<?php echo BASE_URL ?>views/js/functions_categorias.js"></script>

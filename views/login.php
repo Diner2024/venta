@@ -233,17 +233,6 @@ form {
 
     </style>
     <script> const base_url = '<?php echo BASE_URL; ?>';</script>
-    <div class="dropdown">
-                <button class="dropbtn">Menu</button>
-                <div class="dropdown-content">
-                    <a href="<?php echo BASE_URL ?>Categorías">Categorías</a>
-                    <a href="<?php echo BASE_URL ?>compras">Compras</a>
-                    <a href="<?php echo BASE_URL ?>persona">Persona</a>
-                    <a href="<?php echo BASE_URL ?>Producto">Producto</a>
-                    <a href="<?php echo BASE_URL ?>Proveedor">Proveedor</a>
-                    <a href="<?php echo BASE_URL ?>Trabajador">Trabajador</a>
-                </div>
-            </div>
     <div class="container">
         <div class="login-box">
             <img src="https://i.pinimg.com/564x/15/f3/b1/15f3b1dd58c05f61a2f4f1bbe85e9e33.jpg" alt="Descripción de la imagen" class="imagen-pequena">  

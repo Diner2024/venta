@@ -27,6 +27,9 @@
     </div>
 
     <button type="button" class="btn btn-warning" onclick="registrarcompra();">Agregar Compra</button>
+    <div class="col text-center">
+                <a href="<?php echo BASE_URL ?>paneladministracion" class="btn btn-secondary">VOLVER A LA PAGINA PRINCIPAL</a>
+            </div>
 </form>
 
 <script src="<?php echo BASE_URL;?>views/js/functions_compras.js"></script>

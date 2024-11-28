@@ -8,7 +8,7 @@
             <th>Stock</th>
             <th>Categoria</th>
             <th>Proveedor</th>
-            <th class="acciones">Acciones</th>
+            <th>Acciones</th>
           </tr> 
         </thead>
         <tbody id="tbl_productos">

@@ -39,6 +39,9 @@
                 </select>
             </div>
             <button type="button" class="btn btn-success col-6 mx-2" onclick="registrarProducto();">Enviar</button>
+            <div class="col text-center">
+                <a href="<?php echo BASE_URL ?>paneladministracion" class="btn btn-secondary">VOLVER A LA PAGINA PRINCIPAL</a>
+            </div>
         </form>
     </div>
     <script src="<?php BASE_URL;?>views/js/functions_producto.js"></script>

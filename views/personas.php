@@ -1,9 +1,5 @@
 <div class="col-12 container mt-4">
-<<<<<<< HEAD
 <table class ="table table-bordered table-striped table-hover table-sm shadow-lg rounded" id="tbl_productos">
-=======
-<table class="table table-bordered table-striped table-hover table-sm shadow-lg rounded">
->>>>>>> 1fa85da269eca86cb10af28c069463582cfb075e
         <thead class="table-dark text-center">
             <tr>
                 <th>Nro</th>

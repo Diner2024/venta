@@ -145,7 +145,7 @@
                     </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <a href="index.html" class="btn btn-primary">Aceptar</a>
-                        <a href="index.html" class="btn btn-secondary">Volver al inicio</a>
+                        <a href="<?php echo BASE_URL ?>inicio" class="btn btn-secondary">VOLVER A LA PAGINA PRINCIPAL</a>
                     </div>
                 </form>
             </div>

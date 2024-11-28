@@ -9,134 +9,100 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
 body {
-  margin: auto;
-  padding: auto;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1rem;
-    font-weight: 400;
     line-height: 1.5;
-    color: #212529;
-    text-align: left;
-    background-color: rgb(176, 216, 230);
+    color: #333;
+    background-color: #f4f4f4;
 }
 
-    .navbar {
-      background-color: hsl(142, 27%, 84%);
-    }
-    .navbar-brand img {
-    height: 70px;
+.navbar {
+    background-color: #dbdbdb;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-brand img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffffff;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.1);
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #ffd700;
+}
+
+.product img {
     width: 100%;
-      
-      object-fit: cover;
-      display: inline-block;
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      overflow: hidden;
-      animation: border-pulse 2s infinite;
-    }
-
-    @keyframes border-pulse {
-      0% {
-        box-shadow: 0 0 10px rgb(9, 33, 247);
-      }
-      25% {
-        box-shadow: 0 0 10px hsl(99, 99%, 47%);
-      }
-      50% {
-        box-shadow: 0 0 10px rgb(211, 239, 3);
-      }
-      75% {
-        box-shadow: 0 0 10px rgb(11, 238, 19);
-      }
-      100% {
-        box-shadow: 0 0 10px rgb(255, 0, 0);
-      }
-}
-    .navbar-nav .nav-link, .navbar-nav .nav-item {
-      color: #fff;
-    }
-    .product img {
-      width: 100%;
-      height: auto;
-    }
-    .footer {
-      background-color: #000000;
-      color: #fff;
-      padding: 20px 0;
-    }
-    .footer a {
-      color: #fff;
-    }
-    /* Estilo para los botones activos */
-    .navbar-nav .nav-item .nav-link.active {
-      color: rgb(255, 0, 0) !important; /* Color de texto blanco */
-      font-weight: bold; /* Texto en negrita */
-      background-color: rgb(0, 0, 0) !important; /* Fondo rojo */
-    }
-
-    .btn-primary {
-    color: #f7ff0b;
-    background-color: #1fff06;
-    border-color: #00fff2;
-    animation: blink 1s infinite;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-
-
-
-
-
-.nav-item.dropdown {
-position: relative;
+.footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px 0;
 }
 
-.nav-item.dropdown .dropdown-menu {
-display: none;
-position: absolute;
-background-color: #03eeff;
-min-width: 160px;
-box-shadow: 0px 8px 16px 0px rgb(0, 4, 250);
-z-index: 1;
+.footer a {
+    color: #3498db;
+    transition: color 0.3s ease;
 }
 
-.nav-item.dropdown:hover .dropdown-menu {
-display: block;
+.footer a:hover {
+    color: #2ecc71;
 }
 
-.nav-item.dropdown .dropdown-menu .dropdown-item {
-color: black;
-padding: 12px 16px;
-text-decoration: none;
-display: block;
+.btn-primary {
+    background-color: #3498db;
+    border-color: #2980b9;
+    color: #ffffff;
+    transition: all 0.3s ease;
 }
 
-.nav-item.dropdown .dropdown-menu .dropdown-item:hover {
-background-color: #ddd;
+.btn-primary:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
 }
 
-.nav-item.dropdown .dropdown-menu .dropdown-item:hover {
-background-color: hsl(114, 93%, 48%);
+.dropdown-menu {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .dropdown-item {
-    display: block;
-    width: 100%;
-    padding: .25rem 1.5rem;
-    clear: both;
-    font-weight: 400;
-    color: hsl(246, 96%, 49%);
-    text-align: inherit;
-    white-space: nowrap;
-    background-color: #06ecf0;
-    border: 0;
-}
-button {
-    color: red;
-
+    color: #333;
+    transition: background-color 0.3s ease;
 }
 
+.dropdown-item:hover {
+    background-color: #f4f4f4;
+    color: #3498db;
+}
 
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar-brand img {
+        height: 50px;
+        width: 50px;
+    }
+}
   </style>
 
 <script>
@@ -187,7 +153,7 @@ button {
       <li class="nav-item">
         <a class="nav-link" href="<?php echo BASE_URL ?>ubicacion">UBICACIÓN</a>
       </li>
-        <p class="nav-link" type="button" style="color:blue"><a onclick="cerrar_sesion();">cerrar sesion</p>
+        <p class="nav-link" type="button" style="color:black"><a onclick="cerrar_sesion();">cerrar sesion</p>
 
       
     </ul>
@@ -197,6 +163,12 @@ button {
 
   <nav class="navbar navbar-expand">
     <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+        <a class="nav-link" href="<?php echo BASE_URL ?>paneladministracion">
+        <button type="submit">PANELADMINISTRACION</button></a>
+      </li>
+
+
       
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -213,7 +185,10 @@ button {
         <button type="submit">Carrito</button></a>
       </li>
     </ul>
+    
   </nav>
 
   
 </nav>
+<a class="m-2" href="<?php BASE_URL?>panelAdministrador"><i class="fa fa-bars" style="color:#ffffff;" ></i></a>
+
