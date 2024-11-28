@@ -68,3 +68,4 @@
 </div>
 
 <script src="<?php BASE_URL; ?>views/js/functions_persona.js"></script>
+<script>registrarPersona();</script>

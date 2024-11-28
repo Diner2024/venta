@@ -41,45 +41,8 @@ try {
 }
 };
 
-//listar personas
 
-async function listar_personas() {
-    try {
-        let respuesta = await fetch(base_url+'controller/Persona.php?tipo=listar_p');
-        let json = await respuesta.json();
-        if (json.status) {
-            let datos = json.contenido;
-            let cont = 0;
-            datos.forEach(item=>{
-                let nueva_fila = document.createElement("tr");
-                nueva_fila.id = "fila"+item.id; 
-                cont+=1;
-                nueva_fila.innerHTML = `
-                <th>${cont}</th> 
-                <td>${item.nro_identidad}</td>
-                <td>${item.razon_social}</td>
-                <td>${item.telefono}</td>
-                <td>${item.correo}</td>
-                <td>${item.departamento}</td>
-                <td>${item.cos_postal}</td>
-                <td>${item.direccion}</td>
-                <td>${item.rol}</td>
-                <td>
-                    <button class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></button>
-                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
-                </td>
-        `;
-        document.querySelector('#tbl_persona').appendChild(nueva_fila);
-            });
-        }else{
-            Swal.fire("No se encontraron productos.");
-        }
-        console.log(json);
-    } catch (error) {
-        console.log("Oops salio un error "+error);
-    }
 
-<<<<<<< HEAD
 //listar persona
 async function listar_personas() {
     try {
@@ -104,7 +67,7 @@ async function listar_personas() {
                 <td>${item.rol}</td>
                 <td>${item.options}</td>
         `;
-        document.querySelector('#tbl_persona').appendChild(nueva_fila);
+        document.querySelector('#frmRegistrar').appendChild(nueva_fila);
             });
         }else{
             Swal.fire("No se encontraron productos.");
@@ -113,17 +76,10 @@ async function listar_personas() {
     } catch (error) {
         console.log("Oops salio un error "+error);
     }
-
-=======
->>>>>>> 1fa85da269eca86cb10af28c069463582cfb075e
 }
-
-if (document.querySelector('#tbl_persona')) {
+if (document.querySelector('#frmRegistrar')) {
     listar_personas();
 }
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 1fa85da269eca86cb10af28c069463582cfb075e
 

@@ -38,7 +38,6 @@ if ($tipo == "registrar") {
         echo json_encode($arr_Respuesta);
     }
 }
-<<<<<<< HEAD
 
 //listar persona
 if ($tipo == "listar_personas") {
@@ -110,6 +109,3 @@ if ($tipo=="listarTrabajador") {
     echo json_encode($arr_respuesta);
 
 }
-=======
-?>
->>>>>>> 1fa85da269eca86cb10af28c069463582cfb075e
