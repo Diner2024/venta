@@ -51,8 +51,11 @@ async function listar_personas() {
         if (json.status) {
             let datos = json.contenido;
             let cont = 0;
+                 /*        let contenido_select = '<tbody> <tr><td>nombre</td><td>apelldio</td></tr></tbody>'; */
+
             datos.forEach(item=>{
                 let nueva_fila = document.createElement("tr");
+                                //nuevaFilaid: es crear // item.Id: viene de la base de datos
                 nueva_fila.id = "fila"+item.id; // id anuevo asignado-------------id de la BD
                 cont+=1;
                 nueva_fila.innerHTML = `
@@ -67,7 +70,7 @@ async function listar_personas() {
                 <td>${item.rol}</td>
                 <td>${item.options}</td>
         `;
-        document.querySelector('#frmRegistrar').appendChild(nueva_fila);
+        document.querySelector('#tbl_persona').appendChild(nueva_fila);
             });
         }else{
             Swal.fire("No se encontraron productos.");
@@ -77,7 +80,7 @@ async function listar_personas() {
         console.log("Oops salio un error "+error);
     }
 }
-if (document.querySelector('#frmRegistrar')) {
+if (document.querySelector('#tbl_persona')) {
     listar_personas();
 }
 

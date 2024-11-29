@@ -1,5 +1,5 @@
 <div class="col-12 container mt-4">
-<table class ="table table-bordered table-striped table-hover table-sm shadow-lg rounded" id="tbl_productos">
+<table class = "table table-bordered table-striped table-hover table-sm shadow-lg rounded" id="tbl_persona">
         <thead class="table-dark text-center">
             <tr>
                 <th>Nro</th>

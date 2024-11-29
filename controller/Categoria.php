@@ -17,8 +17,8 @@ $objCategoria = new CategoriaModel();
             $id_categoria = $arrCategorias[$i]->id;
             $nombre_categoria = $arrCategorias[$i]->nombre;
             $detalle = $arrCategorias[$i]->detalle;
-            $opciones = '<button class="btn btn-primary btn-sm">editar<i class="fas fa-edit"></i></button>
-                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash-alt">eliminar</i></button>';
+            $opciones = '<button class="btn btn-primary btn-sm">Editar<i class="fas fa-edit"></i></button>
+                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash-alt">Eliminar</i></button>';
             $arrCategorias [$i] ->options = $opciones;
         }
         $arr_Respuesta['status'] = true;
