@@ -1,10 +1,13 @@
 <div class="container mt-5">
-        <h2 class="mb-4">Formulario de Editar Producto</h2>
-        <form id="frmRegistrar" >
-            <div class="mb-3">
-                <label for="codigo" class="form-label">Código</label>
-                <input type="text" class="form-control" id="codigo" name="codigo" maxlength="20" required>
-            </div>
+        <h2 class="mb-4">Editar Producto</h2>
+        <p class="text-muted">Complete los detalles del nuevo producto</p>
+        <form id="frmactualizar" >
+        <input type="hidden" name="id_producto" id="id_producto">
+    <input type="hidden" name="img" id="img">
+    <div class="form-group">
+        <label for="">Codigo:</label>
+        <input type="text" class="form-control" id="codigo" name="codigo" readonly disabled>
+    </div>
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="nombre" name="nombre" maxlength="30" required>
@@ -38,18 +41,18 @@
                     <option value="">Seleccione</option>
                 </select>
             </div>
-            <button type="button" class="btn btn-success col-6 mx-2" onclick="registrarProducto();">Enviar</button>
-            <div class="col text-center">
-                <a href="<?php echo BASE_URL ?>actualizarproducto" class="btn btn-secondary">Actualizar Producto</a>
-            </div>
+            <button type="button" class="btn btn-success" onclick="actualizarProducto();">Actualizar</button>
         </form>
     </div>
-    <script src="<?php BASE_URL;?>views/js/functions_producto.js"></script>
+    <script src="<?php echo BASE_URL; ?>views/js/functions_producto.js"></script>
     <script>listar_categoria();</script>
     <script>listar_proveedores();</script>
     <script>
     //http://localhost/venta/editarproducto/1
-const id_p=<?php $pagina=explode("/", $_GET['views']); echo $pagina['1']; ?>;
-ver_producto(id_p); 
+const id_p=<?php $pagina=explode("/", $_GET['views']); echo $pagina['1']; ?>;ver_producto(id_p); 
     </script>
+    
+
+
+
     

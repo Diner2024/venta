@@ -8,123 +8,143 @@
   <title>TIENDA DE CALZADOS </title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
-body { 
-    margin: 0; 
-    padding: 0; 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-    font-size: 1rem; 
-    line-height: 1.5; 
-    color: #333; 
-    background-color: #f4f4f4; 
-} 
-
-.navbar { 
-    background-color: #a0a0a0; 
-    transition: background-color 0.3s ease; 
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #c9d1d9;
 }
 
-.navbar-brand img { 
-    height: 60px; 
-    width: 60px; 
-    border-radius: 50%; 
-    object-fit: cover; 
-    border: 3px solid #ffffff; 
-    transition: transform 0.3s ease; 
-} 
-
-.navbar-brand img:hover { 
-    transform: scale(1.1); 
-} 
-
-.navbar-nav .nav-link { 
-    color: #ffffff; 
-    transition: color 0.3s ease; 
-}
-
-.navbar-nav .nav-link:hover, .navbar-nav .nav-link.active { 
-    color: #ffd700; 
-}
-
-.product img { 
-    width: 100%; 
-    height: auto; 
-    border-radius: 8px; 
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
-} 
-
-.footer { 
-    background-color: #a0a0a0; 
-    color: #ecf0f1; 
-    padding: 20px 0; 
-}
-
-.footer a { 
-    color: #3498db; 
-    transition: color 0.3s ease; 
-}
-
-.footer a:hover { 
-    color: #2ecc71; 
-}
-
-.btn-primary { 
-    background-color: #3498db; 
-    border-color: #2980b9; 
-    color: #ffffff; 
-    transition: all 0.3s ease; 
-}
-
-.btn-primary:hover { 
-    background-color: #2980b9; 
-    transform: translateY(-2px); 
-}
-
-.dropdown-menu { 
-    background-color: #ffffff; 
-    border: 1px solid #e0e0e0; 
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
-    display: none; 
-    position: absolute; 
-    top: 100%; 
-    left: 0; 
-    min-width: 200px; 
-    z-index: 1000; 
-}
-
-.dropdown-item { 
-    color: #333; 
-    transition: background-color 0.3s ease; 
-}
-
-.dropdown-item:hover { 
-    background-color: #f4f4f4; 
-    color: #3498db; 
-}
-
-/* Show the submenu when hovering over the parent item */
-.navbar-nav .nav-item:hover .dropdown-menu { 
-    display: block; 
-}
-
-/* Make sure the submenu items align correctly */
-.navbar-nav .nav-item { 
-    position: relative; 
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) { 
-    .navbar-brand img { 
-        height: 50px; 
-        width: 50px; 
-    } 
-}
-
-/* Ensure links are styled consistently */
-a {
+    .navbar {
+      background-color: rgb(90 91 93 / 88%);
+    }
+    a {
     color: #fff;
     text-decoration: none;
     background-color: transparent;
 }
+a:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+.nav-link {
+    display: block;
+    padding: .5rem 1rem;
+    color: #fff;
+    text-decoration: none;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+}
+    .navbar-brand img {
+    height: 70px;
+    width: 100%;
+      
+      object-fit: cover;
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      animation: border-pulse 2s infinite;
+    }
+
+    @keyframes border-pulse {
+      0% {
+        box-shadow: 0 0 10px rgb(9, 33, 247);
+      }
+      25% {
+        box-shadow: 0 0 10px hsl(99, 99%, 47%);
+      }
+      50% {
+        box-shadow: 0 0 10px rgb(211, 239, 3);
+      }
+      75% {
+        box-shadow: 0 0 10px rgb(11, 238, 19);
+      }
+      100% {
+        box-shadow: 0 0 10px rgb(255, 0, 0);
+      }
+}
+    .navbar-nav .nav-link, .navbar-nav .nav-item {
+      color: #fff;
+    }
+    .product img {
+      width: 100%;
+      height: auto;
+    }
+    .footer {
+      background-color: #000000;
+      color: #fff;
+      padding: 20px 0;
+    }
+    .footer a {
+      color: #fff;
+    }
+    /* Estilo para los botones activos */
+    .navbar-nav .nav-item .nav-link.active {
+      color: rgb(255, 0, 0) !important; /* Color de texto blanco */
+      font-weight: bold; /* Texto en negrita */
+      background-color: rgb(0, 0, 0) !important; /* Fondo rojo */
+    }
+
+    .btn-primary {
+    color: #f7ff0b;
+    background-color: #1fff06;
+    border-color: #00fff2;
+    animation: blink 1s infinite;
+}
+
+.nav-item.dropdown {
+position: relative;
+}
+
+
+
+.nav-item.dropdown:hover .dropdown-menu {
+display: block;
+}
+
+.nav-item.dropdown .dropdown-menu .dropdown-item {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+
+.nav-item.dropdown .dropdown-menu .dropdown-item:hover {
+background-color: #ddd;
+}
+
+.nav-item.dropdown .dropdown-menu .dropdown-item:hover {
+background-color: hsl(114, 93%, 48%);
+}
+
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: .25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: hsl(246, 96%, 49%);
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: #6c757d;
+}
+button {
+    color: red;
+background: #5ea7f5;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #3682d3;
+    animation: blink 1s infinite;
+}
+
 
   </style>
 
@@ -138,7 +158,7 @@ a {
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark">
   <a class="navbar-brand" href="#">
-    <img src="https://i.pinimg.com/564x/15/f3/b1/15f3b1dd58c05f61a2f4f1bbe85e9e33.jpg" alt="logo">
+    <img href="<?php echo BASE_URL ?>inicio" src="https://i.pinimg.com/564x/15/f3/b1/15f3b1dd58c05f61a2f4f1bbe85e9e33.jpg" alt="logo">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -151,13 +171,15 @@ a {
         <li class="nav-item dropdown"> 
           <a class="nav-link dropdown-toggle" href="<?php echo BASE_URL ?>inicio" role="button" data-bs-toggle="dropdown" aria-expanded="false"> CALZADOS </a> 
 
-          <ul class="dropdown-menu"> <li><a class="dropdown-item" href="<?php echo BASE_URL ?>damas">DAMAS</a>
+          <ul class="dropdown-menu"> 
+          <li><a class="dropdown-item" href="<?php echo BASE_URL ?>damas">DAMAS</a>
           </li> 
           <li><a class="dropdown-item" href="<?php echo BASE_URL ?>caballeros">CABALLEROS</a>
           </li> 
           <li><a class="dropdown-item" href="<?php echo BASE_URL ?>niños">NIÑOS</a>
           </li> 
         </ul> 
+        
           <li class="nav-item">
         <a class="nav-link" href="<?php echo BASE_URL ?>novedades">NOVEDADES</a>
       </li>
@@ -208,7 +230,7 @@ a {
     </ul>
     
   </nav>
-
+  </nav>
   
 </nav>
 <a class="m-2" href="<?php BASE_URL?>panelAdministrador"><i class="fa fa-bars" style="color:#ffffff;" ></i></a>

@@ -119,44 +119,50 @@ async function listar_proveedores(){
     }
 }
 
-
 async function ver_producto(id) {
-    const FormData = new FormData();
+    //console.log('hola soy la funcion ver');
+    const formData = new FormData();
     formData.append('id_producto', id);
     try {
-        let respuesta = await fetch(base_url+'controller/Producto.php?tipo=Ver',{
+        let respuesta = await fetch(base_url + 'controller/Producto.php?tipo=ver', {
             method: 'POST',
             mode: 'cors',
-            cache: 'no_cache',
-            body: 'formData',  
+            cache: 'no-cache',
+            body: formData
         });
         json = await respuesta.json();
-        if (json.status){
-            document.querySelector('#codigo').value 
-            = json.contenido.codigo;
-            document.querySelector('#nombre').value 
-            = json.contenido.nombre;
-            document.querySelector('#detalle').value 
-            = json.contenido.detalle;
-            document.querySelector('#precio').value 
-            = json.contenido.precio;
-            document.querySelector('#stock').value 
-            = json.contenido.stock;
-            document.querySelector('#idCategoria').value 
-            = json.contenido.idCategoria;
-            document.querySelector('#idProveedor').value 
-            = json.contenido.idProveedor;
-        }else{
-            window.location = base_url+"productos";
+        if (json.status) {
+            document.querySelector('#id_producto').value = json.contenido.id;
+            document.querySelector('#codigo').value = json.contenido.codigo;
+            document.querySelector('#nombre').value = json.contenido.nombre;
+            document.querySelector('#detalle').value = json.contenido.detalle;
+            document.querySelector('#precio').value = json.contenido.precio;
+            document.querySelector('#categoria').value = json.contenido.idCategoria;
+            document.querySelector('#proveedor').value = json.contenido.idProveedor;
+            document.querySelector('#img').value = json.contenido.imagen;
+        } else {
+            window.location = base_url + "productos";
         }
-
         console.log(json);
     } catch (error) {
-        console.log("oops ocurrio un error "+error);
+        console.log("oops ocurrio un error " + error);
     }
-    
 }
 
 
 
+async function actualizarProducto() {
+    const datos = new FormData(frmactualizar);
+    try {
+        let respuesta = await fetch(base_url + 'controller/Producto.php?tipo=actualizar', {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache',
+            body: datos
+        });
+        json = await respuesta.json();
+        console.log(json);
+    } catch (e) {
 
+    }
+}
