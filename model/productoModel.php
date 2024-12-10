@@ -63,7 +63,7 @@ public function ver_Producto($id){
     $sql = $sql->fetch_object();
     return $sql;
 }
-public function eliminarproducto($id){
+public function eliminarProducto($id){
     $sql = $this->conexion->query("CALL eliminarproducto('{$id}')");
     $sql = $sql->fetch_object();
     return $sql;

@@ -170,37 +170,37 @@ async function actualizarProducto() {
 
 async function eliminar_producto(id) {
     swal({
-        title: "Realmente desea eliminar el Producto?",
-        Text: '',
+        title: "Estás seguro de que quieres eliminar el producto?",
+        text: "",
         icon: "warning",
         buttons: true,
         dangerMode: true
     }).then((willDelete)=>{
-        if (willDelete){
+        if (willDelete) {
             fnt_eliminar(id);
         }
     })
 }
+
+
 async function fnt_eliminar(id) {
-    //alert("Producto eliminar: id =" + id)
     const formdata = new FormData();
     formdata.append('id_producto', id);
-    try{
-        let respuesta = await fetch(base_url + 'controller/Producto.php?tipo=eliminar',{
+    try {
+        let respuesta = await fetch(base_url + 'controller/Producto.php?tipo=eliminar', {
             method: 'POST',
             mode: 'cors',
-            cahe: 'no-cache',
-            body: formData
+            cache: 'no-cache',
+            body: formdata
         });
         json = await respuesta.json();
         if (json.status) {
-            //alert("eliminado correctamente");
-            swal("Eliminar", "eliminado correctamente", "success");
-            document.querySelector('#fila'+id).remove();
+            swal("Eliminar", "Eliminado correctamente", "success");
+            document.querySelector('#fila' + id).remove();
         }else{
-            swal('Eliminar', 'Error al eliminar producto', 'Warning');
+            swal("Eliminar", "Error al eliminar", "warning");
         }
-    }catch (e) {
-        console.log("Upss ocurrio un error "+ e);
+    } catch (e) {
+        console.log("Ups, ocurrió un error, " + e);
     }
 }
