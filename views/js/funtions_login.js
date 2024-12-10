@@ -1,5 +1,4 @@
-async function iniciar_sesion(params) {
-    console.log('iniciar_sesion');
+async function iniciar_sesion() {
     let usuario = document.querySelector('#usuario');
     let password = document.querySelector('#password');
     if (usuario=="" || password =="") {
