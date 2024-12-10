@@ -238,7 +238,7 @@ form {
             <img src="https://i.pinimg.com/564x/15/f3/b1/15f3b1dd58c05f61a2f4f1bbe85e9e33.jpg" alt="Descripción de la imagen" class="imagen-pequena">  
     
             <h2>BIENVENIDOS DE VUELTA</h2>
-            <form id="loginForm" method="POST" action="<?php echo BASE_URL ?>inicio">
+            <form id="frm_iniciar_sesion">
                       <div class="input-group">
                         <label for="usuario" class="form-label">usuario</label> 
                         <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Ingresa tu Usuario" required>
