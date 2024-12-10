@@ -1,5 +1,11 @@
 
-
+<STyle>
+  a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+}
+</STyle>
 <div class="col-12 container mt-4">
 <table class="table table-bordered table-striped table-hover table-sm shadow-lg rounded" id="tbl_productos">
 <thead>
@@ -19,4 +25,4 @@
 </div> 
 <script>listarproductos();</script>
 <script src="<?php BASE_URL;?>views/js/functions_producto.js"> </script>
-   
+<script>eliminar_producto();</script>

@@ -21,10 +21,6 @@
                 <input type="number" class="form-control" id="precio" name="precio" step="0.01" required>
             </div>
             <div class="mb-3">
-                <label for="stock" class="form-label">Stock</label>
-                <input type="number" class="form-control" id="stock" name="stock" min="0" max="99999" required>
-            </div>
-            <div class="mb-3">
                 <label for="idCategoria" class="form-label">Categoría</label>
                 <select id="idCategoria" name="idCategoria" class="form-control">
                     <option value="">Seleccione</option>

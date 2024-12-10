@@ -134,7 +134,16 @@ if ($tipo == "actualizar") {
     echo json_encode($arr_Respuesta);
 }
 if ($tipo == "eliminar") {
-    # code...
+    //print_r($_POST);
+    $id_producto = $_POST['id_producto'];
+    $arr_Respuesta = $objProducto->eliminarproducto($id_producto);
+    //print_r($arr_Respuesta);
+    if (empty($arr_Respuesta)) {
+        $response = array('status' => false);
+    } else {
+        $response = array('status' => true);
+    }
+    echo json_encode($response);
 }
 
 ?>
