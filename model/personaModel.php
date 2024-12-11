@@ -75,8 +75,23 @@ public function obtener_proveedor_id($id){
     }
 
     
-    
+    public function verPersona($id){
+        $sql = $this->conexion->query("SELECT * FROM persona WHERE id='{$id}'");
+        $sql = $sql->fetch_object();
+        return $sql;
+     }
+     public function actualizarPersona($id, $nro_identidad, $razon_social, $telefono, $correo, $departamento,  $cod_postal, $direccion, $rol){
+        $sql = $this->conexion->query("CALL actualizarpersona('{$id}','{$nro_identidad}','{$razon_social}','{$telefono}','{$correo}','{$departamento}','{$cod_postal}','{$direccion}','{$rol}')");
+        $sql = $sql->fetch_object();
+        return $sql;
+    }
+    public function eliminarProducto($id){
+        $sql = $this->conexion->query("CALL eliminarpersona('{$id}')");
+        $sql = $sql->fetch_object();
+        return $sql;
+    }
+}
+
 
    
-}
 ?>

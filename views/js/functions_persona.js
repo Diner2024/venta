@@ -86,3 +86,93 @@ if (document.querySelector('#tbl_persona')) {
 
 
 
+async function ver_persona(id) {
+    const formData = new FormData();
+    formData.append('id_persona', id); 
+    try {
+        let respuesta = await fetch(base_url+'controller/persona.php?tipo=ver', {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache',
+            body: formData
+        });
+        json = await respuesta.json();
+        if (json.status) {
+            document.querySelector('#id_persona').value = json.contenido.id;
+            document.querySelector('#nro_identidad').value = json.contenido.nro_identidad;
+            document.querySelector('#razon_social').value = json.contenido.razon_social;
+            document.querySelector('#telefono').value = json.contenido.telefono;
+            document.querySelector('#correo').value = json.contenido.correo;
+            document.querySelector('#departamento').value = json.contenido.departamento;
+            document.querySelector('#provincia').value = json.contenido.provincia;
+            document.querySelector('#distrito').value = json.contenido.distrito;
+            document.querySelector('#cod_postal').value = json.contenido.cod_postal;
+            document.querySelector('#direccion').value = json.contenido.direccion;
+            document.querySelector('#rol').value = json.contenido.rol;
+        }else{
+            window.location = base_url+"persona";
+        }
+        console.log(json);
+    } catch (error) {
+        console.log("oops ocurrio un error al editar persona"+error)
+    }
+}
+
+async function actualizarPersona() {
+    const datos = new FormData(formActualizarPer);
+    try {
+        let respuesta = await fetch(base_url + 'controller/persona.php?tipo=actualizar', {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache',
+            body: datos
+        });
+        json = await respuesta.json();
+        if(json.status){
+            swal("Actualización", json.mensaje, "success");
+        }else{
+            swal("Actualización", json.mensaje, "error");
+        }
+        console.log(json);
+    } catch (e) {
+
+    }
+}
+
+async function eliminarProducto(id) {
+    swal({
+        title: "Estás seguro de que quieres eliminar el persona?",
+        text: "",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true
+    }).then((willDelete)=>{
+        if (willDelete) {
+            fnt_eliminar(id);
+        }
+    })
+}
+
+
+async function fnt_eliminar(id) {
+    const formdata = new FormData();
+    formdata.append('id_persona', id);
+    try {
+        let respuesta = await fetch(base_url + 'controller/persona.php?tipo=eliminar', {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache',
+            body: formdata
+        });
+        json = await respuesta.json();
+        if (json.status) {
+            swal("Eliminar", "Eliminado correctamente", "success");
+            document.querySelector('#fila' + id).remove();
+        }else{
+            swal("Eliminar", "Error al eliminar", "warning");
+        }
+    } catch (e) {
+        console.log("Ups, ocurrió un error, " + e);
+    }
+}
+

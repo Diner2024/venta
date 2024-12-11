@@ -23,14 +23,18 @@ public function obtenerproductos(){
    return $arrRespuesta;
 }
 
-    public function registrarProducto($codigo, $nombre, $detalle, $precio,
-     $stock, $categoria, $imagen, $proveedor,$tipoarchivo){
-        $sql = $this->conexion->query("CALL insertproducto('{$codigo}',
-'{$nombre}','{$detalle}','{$precio}','{$stock}','{$categoria}',
-        '{$imagen}','{$proveedor}','{$tipoarchivo}')");
+    public function registrarProducto($codigo, $nombre, $detalle, $precio, $categoria, $proveedor){
+        $sql = $this->conexion->query("CALL insertproducto('{$codigo}','{$nombre}','{$detalle}','{$precio}','{$categoria}','{$proveedor}')");
         $sql = $sql->fetch_object();
         return $sql;
     }
+ //actualizar producto
+ public function actualizarProducto($id, $nombre, $detalle, $precio, $idCategoria,$idProveedor){
+    $sql = $this->conexion->query("CALL actualizarproducto('{$id}','{$nombre}','{$detalle}','{$precio}','{$idCategoria}','{$idProveedor}')");
+    $sql = $sql->fetch_object();
+    return $sql;
+}
+
 
     public function actualizar_imagen($id,$imagen){
         $sql = $this->conexion->query("UPDATE producto SET imagen='{$imagen}' WHERE id='{$id}'");
@@ -57,12 +61,7 @@ public function ver_Producto($id){
     return $sql;
 }
  
- //actualizar producto
- public function actualizarProducto($id, $nombre, $detalle, $precio, $idCategoria,$idProveedor){
-    $sql = $this->conexion->query("CALL actualizarproducto('{$id}','{$nombre}','{$detalle}','{$precio}','{$idCategoria}','{$idProveedor}')");
-    $sql = $sql->fetch_object();
-    return $sql;
-}
+
 public function eliminarProducto($id){
     $sql = $this->conexion->query("CALL eliminarproducto('{$id}')");
     $sql = $sql->fetch_object();
