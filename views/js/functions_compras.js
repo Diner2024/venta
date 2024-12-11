@@ -119,7 +119,7 @@ async function ver_compra(id) {
     const formData = new FormData();
     formData.append('id_compra', id); 
     try {
-        let respuesta = await fetch(base_url+'controller/Compra.php?tipo=ver', {
+        let respuesta = await fetch(base_url+'controller/compra.php?tipo=ver', {
             method: 'POST',
             mode: 'cors',
             cache: 'no-cache',
@@ -144,7 +144,7 @@ async function ver_compra(id) {
 async function actualizarCompra() {
     const datos = new FormData(formACtualizarCompras);
     try {
-        let respuesta = await fetch(base_url + 'controller/Compra.php?tipo=actualizar', {
+        let respuesta = await fetch(base_url + 'controller/compra.php?tipo=actualizar', {
             method: 'POST',
             mode: 'cors',
             cache: 'no-cache',
