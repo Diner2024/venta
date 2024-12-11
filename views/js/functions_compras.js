@@ -114,3 +114,50 @@ async function listar_trabajador(){
         console.log("Error al cargar categoria" + e);
     }
 }
+
+async function ver_compra(id) {
+    const formData = new FormData();
+    formData.append('id_compra', id); 
+    try {
+        let respuesta = await fetch(base_url+'controller/Compra.php?tipo=ver', {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache',
+            body: formData
+        });
+        json = await respuesta.json();
+        if (json.status) {
+            document.querySelector('#id_compra').value = json.contenido.id;
+            document.querySelector('#id_producto').value = json.contenido.id_producto;
+            document.querySelector('#cantidad').value = json.contenido.cantidad;
+            document.querySelector('#precio').value = json.contenido.precio;
+            document.querySelector('#trabajador').value = json.contenido.id_trabajador;
+        }else{
+            window.location = base_url+"compra";
+        }
+        console.log(json);
+    } catch (error) {
+        console.log("oops ocurrio un error al editar compra"+error);
+    }
+}
+
+async function actualizarCompra() {
+    const datos = new FormData(formACtualizarCompras);
+    try {
+        let respuesta = await fetch(base_url + 'controller/Compra.php?tipo=actualizar', {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache',
+            body: datos
+        });
+        json = await respuesta.json();
+        if(json.status){
+            swal("Registro", json.mensaje, "success");
+        }else{
+            swal("Registro", json.mensaje, "error");
+        }
+        console.log(json);
+    } catch (e) {
+        console.log("Oops, ocurrio un error compras"+e);
+    }
+}
