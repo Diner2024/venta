@@ -66,10 +66,6 @@
     </style>
 
 
-
-
-
-
 <div class="admin-container">
         <h1 class="text-center mt-5">Panel de Administración</h1>
         <div class="container-fluid">

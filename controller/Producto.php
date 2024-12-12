@@ -57,7 +57,7 @@ if ($tipo=="registrar"){
         $precio = $_POST['precio'];
         $stock = $_POST['stock'];
         $categoria = $_POST['idCategoria'];
-        $imagen = 'Imagen';
+        $imagen = 'imagen';
         $proveedor = $_POST['idProveedor'];
         if($codigo=="" || $nombre=="" || $detalle=="" || $precio=="" || $stock=="" || $categoria=="" ||  $imagen=="" || $proveedor==""){
             //respuesta
@@ -66,7 +66,7 @@ if ($tipo=="registrar"){
         }else {
             //cargar archivos
             $archivo = $_FILES['imagen']['tmp_name'];
-            $destino = '../assets/img_prodcutos/';
+            $destino = '../assets/img_productos/';
             $tipoArchivo = strtolower(pathinfo($_FILES["imagen"]["name"], PATHINFO_EXTENSION));
 
             $arrProducto = $objProducto->registrarProducto($codigo, $nombre, $detalle, $precio, $stock, $categoria, $imagen, $proveedor,$tipoArchivo);
@@ -106,11 +106,11 @@ if ($tipo == "actualizar") {
     $precio = $_POST['precio'];
     $idCategoria = $_POST['idCategoria'];
     $idProveedor = $_POST['idProveedor'];
-    if ($nombre == "" || $detalle == "" || $precio == "" || $idCategoria == "" || $idProveedor == "") {
+    if ($nombre == "" ||$nombre == "" || $detalle == "" || $stock == "" || $precio == "" || $idCategoria == "" || $idProveedor == "") {
         //repuesta
         $arr_Respuesta = array('status' => false, 'mensaje' => 'Error, campos vacíos');
     } else {
-        $arrProducto = $objProducto->actualizarProducto($id_producto, $nombre, $detalle, $precio, $idCategoria, $idProveedor);
+        $arrProducto = $objProducto->actualizarProducto($id_producto, $nombre, $detalle,$stock, $precio, $idCategoria, $idProveedor);
         if ($arrProducto->p_id > 0) {
             $arr_Respuesta = array('status' => true, 'mensaje' => 'Actualizado Correctamente');
 
@@ -119,7 +119,7 @@ if ($tipo == "actualizar") {
 
                 //cargar archivos
                 $archivo = $_FILES['imagen']['tmp_name'];
-                $destino = '../assets/img_prodcutos/';
+                $destino = '../assets/img_productos/';
                 $tipoArchivo = strtolower(pathinfo($_FILES["imagen"]["name"], PATHINFO_EXTENSION));
                 if (move_uploaded_file($archivo, $destino . '' . $id_producto.'.'.$tipoArchivo)) {
                 }

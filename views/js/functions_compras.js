@@ -74,44 +74,44 @@ async function listar_productos() {
     try {
         let respuesta = await fetch(base_url + 'controller/producto.php?tipo=listar');
         let json = await respuesta.json();
-
+        
         if (json.status) {
             let datos = json.contenido;
             let conten = '<option value="">Seleccionar</option>';
+            
             datos.forEach(element => {
-                conten += '<option value="'+element.id+'">'+element.nombre+'</option>';
-/*                 $('#producto').append($('<option />', {
-                    text: `${element.nombre}`, 
-                    value: `${element.id}`
-                })); */
+                conten += `<option value="${element.id}">${element.nombre}</option>`;
             });
+            
             document.getElementById('producto').innerHTML = conten;
+        } else {
+            console.error("No se pudieron cargar los productos");
+            // Opcional: mostrar un mensaje de error al usuario
+            document.getElementById('producto').innerHTML = '<option value="">Error al cargar productos</option>';
         }
-        console.log(respuesta);
     } catch (error) {
-        console.error("Oops, ocurrió un error al listar productos: " + error);
+        console.error("Error al listar productos: " + error);
+        // Opcional: mostrar un mensaje de error al usuario
+        document.getElementById('producto').innerHTML = '<option value="">Error de conexión</option>';
     }
 }
 
-//listar proveedores
 async function listar_trabajador(){
     try {
+        // Missing 'let' for json declaration
         let respuesta1 = await fetch(base_url+'controller/persona.php?tipo=listarTrabajador');
-        json = await respuesta1.json();
+        let json = await respuesta1.json(); // Add 'let'
+
         if (json.status) {
             let datos1 = json.contenido;
             let contenido_select1 = '<option value="">Seleccionar</option>';
             datos1.forEach(element => {
                 contenido_select1 += '<option value="'+element.id+'">'+element.razon_social+'</option>';
-             /* $('#idCategoria').append($('<option/>',{
-                  text: `${element.Nombre}`,
-                  value: `${element.Id}`,
-                }));    */
             });
             document.getElementById('trabajador').innerHTML = contenido_select1;
         }
     } catch (e) {
-        console.log("Error al cargar categoria" + e);
+        console.error("Error al cargar trabajadores: " + e); // Changed to console.error and improved error message
     }
 }
 
@@ -119,7 +119,7 @@ async function ver_compra(id) {
     const formData = new FormData();
     formData.append('id_compra', id); 
     try {
-        let respuesta = await fetch(base_url+'controller/compra.php?tipo=ver', {
+        let respuesta = await fetch(base_url+'controller/compras.php?tipo=ver', {
             method: 'POST',
             mode: 'cors',
             cache: 'no-cache',
@@ -144,7 +144,7 @@ async function ver_compra(id) {
 async function actualizarCompra() {
     const datos = new FormData(formACtualizarCompras);
     try {
-        let respuesta = await fetch(base_url + 'controller/compra.php?tipo=actualizar', {
+        let respuesta = await fetch(base_url + 'controller/compras.php?tipo=actualizar', {
             method: 'POST',
             mode: 'cors',
             cache: 'no-cache',
@@ -160,4 +160,89 @@ async function actualizarCompra() {
     } catch (e) {
         console.log("Oops, ocurrio un error compras"+e);
     }
+}
+
+async function eliminar_compra(id) {
+    swal({
+        title: "¿Realmente desea eliminar la compra?",
+        text: "Esta acción no se puede deshacer",
+        icon: "warning",
+        buttons: {
+            cancel: "Cancelar",
+            confirm: {
+                text: "Sí, eliminar",
+                visible: true,
+                className: "btn-danger"
+            }
+        },
+        dangerMode: true
+    }).then((willDelete) => {
+        if (willDelete) {
+            // Enviar solicitud de eliminación
+            $.ajax({
+                url: 'controlador.php', // Ajusta la ruta según tu estructura
+                type: 'POST',
+                data: {
+                    tipo: 'eliminar',
+                    id_compra: id
+                },
+                dataType: 'json',
+                success: function(response) {
+                    if (response.status) {
+                        // Eliminación exitosa
+                        swal({
+                            title: "Compra eliminada",
+                            text: "La compra ha sido eliminada correctamente",
+                            icon: "success",
+                            button: "Aceptar"
+                        }).then(() => {
+                            // Recargar la tabla o eliminar la fila
+                            $('#tabla-compras').DataTable().row($(`#fila-${id}`)).remove().draw();
+                        });
+                    } else {
+                        // Error en la eliminación
+                        swal({
+                            title: "Error",
+                            text: response.message || "No se pudo eliminar la compra",
+                            icon: "error",
+                            button: "Aceptar"
+                        });
+                    }
+                },
+                error: function() {
+                    // Error de conexión
+                    swal({
+                        title: "ADVERTENCIA",
+                        text: "No se puede eliminar esta compra por que esta registrado",
+                        icon: "error",
+                        button: "Aceptar"
+                    });
+                }
+            });
+        }
+    });
+}
+
+async function fnt_eliminar(id) {
+    const formData = new FormData();
+    formData.append('id_compra',
+        id);
+        try {
+            let respuesta = await fetch(base_url + 'controller/compras.php?tipo=eliminar',{
+                 method: 'POST',
+                 mode: 'cors',
+                 cache: 'no-cache',
+                 body: formData
+        
+            });
+            json = await respuesta.json();
+            if (json.status) {
+                swal("Eliminar", "eliminado correctamente", "success");
+                document.querySelector('#fila'+id).remove();
+            }else{
+                swal('Eliminar', 'Error al eliminar compra', 'warning');
+            }
+        } catch (e) {
+            console.log("ocurrio un error" + e);
+        }
 }

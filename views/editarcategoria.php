@@ -14,7 +14,7 @@
     <button type="button" class="btn btn-success" onclick="actualizarCategoria();">Actualizar</button>
 </form>
 </div>
-<script src="<?php echo BASE_URL ?>views/js/functions_categoria.js"></script>
+<script src="<?php echo BASE_URL ?>views/js/functions_categorias.js"></script>
 <script>
     //http://localhost/venta_mary/editar-producto/1
     //captura lo que viene en el link     se captura la posicion de ese valor

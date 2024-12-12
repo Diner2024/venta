@@ -5,25 +5,34 @@ $tipo  = $_REQUEST['tipo'];
 
 $objCategoria = new CategoriaModel();
 
-     if ($tipo == "listar") {
-
-    $arr_Respuesta = array('status' => false, 'contenido' =>'');
+if ($tipo == "listar") {
+    $arr_Respuesta = array('status' => false, 'contenido' => '');
     $arrCategorias = $objCategoria->obtenerCategorias();
-
+    
     if (!empty($arrCategorias)) {
-
-        //recorremos el array para agregar las opciones de la categoria
-        for ($i=0; $i < count($arrCategorias); $i++) { 
+        // Recorremos el array para agregar las opciones de la categoria
+        for ($i = 0; $i < count($arrCategorias); $i++) {
             $id_categoria = $arrCategorias[$i]->id;
             $nombre_categoria = $arrCategorias[$i]->nombre;
             $detalle = $arrCategorias[$i]->detalle;
-            $opciones = '<button class="btn btn-primary btn-sm">Editar<i class="fas fa-edit"></i></button>
-                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash-alt">Eliminar</i></button>';
-            $arrCategorias [$i] ->options = $opciones;
+            
+            // Corrected the options generation
+            $opciones = 
+                '<a href="'.BASE_URL.'editarcategoria/'.$id_categoria.'" class="btn btn-info btn-sm">
+                    <i class="fas fa-edit"></i> EDITAR CATEGORIA
+                </a>
+                <button onclick="eliminar_categoria('.$id_categoria.');" class="btn btn-danger btn-sm">
+                    ELIMINAR CATEGORIA <i class="fas fa-trash-alt"></i>
+                </button>';
+            
+            // Corrected array assignment
+            $arrCategorias[$i]->options = $opciones;
         }
+        
         $arr_Respuesta['status'] = true;
         $arr_Respuesta['contenido'] = $arrCategorias;
     }
+    
     echo json_encode($arr_Respuesta);
 }
 
@@ -87,4 +96,17 @@ if ($tipo == "actualizar") {
     echo json_encode($arr_Respuesta);
 }
 
+
+if ($tipo == "eliminar") {
+    //print_r($_POST);
+    $id_categoria = $_POST['id_categoria'];
+    $arr_Respuesta = $objCategoria->eliminar_categoria($id_categoria);
+    //print_r($arr_Respuesta);
+    if (empty($arr_Respuesta)) {
+        $response = array('status' => false);
+    } else {
+        $response = array('status' => true);
+    }
+    echo json_encode($response);
+}
 ?>

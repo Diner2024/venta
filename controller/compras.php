@@ -13,32 +13,41 @@ $objPersona = new PersonaModel();
 if ($tipo == "listar") {
     $arr_Respuesta = array('status' => false, 'contenido' =>'');
     $arrCompras = $objCompra->obtener_compras();
-
+    
     if (!empty($arrCompras)) {
-
-        //recorremos el array para agregar las opciones de la categoria
-        for ($i=0; $i < count($arrCompras); $i++) { 
+        // Recorremos el array para agregar las opciones de la compra
+        for ($i = 0; $i < count($arrCompras); $i++) {
             $id_compra = $arrCompras[$i]->id;
-
             $id_producto = $arrCompras[$i]->id_producto;
+            
+            // Obtener producto sin modificar el array original
             $r_producto = $objProducto->obtener_productosId($id_producto);
             $arrCompras[$i]->producto = $r_producto;
-
-
+            
             $cantidad = $arrCompras[$i]->cantidad;
             $precio = $arrCompras[$i]->precio;
-
+            
             $id_trabajador = $arrCompras[$i]->id_trabajador;
+            
+            // Obtener trabajador sin modificar el array original
             $r_usuario = $objPersona->obtener_trabajador_id($id_trabajador);
             $arrCompras[$i]->usuario = $r_usuario;
-
-            $opciones = '<button class="btn btn-primary btn-sm">editar<i class="fas fa-edit"></i></button>
-                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash-alt">eliminar</i></button>';
-            $arrCompras [$i] ->options = $opciones;
+            
+            $opciones = '
+                <a href="'.BASE_URL.'editarcompras/'.$id_compra.'" class="btn btn-primary btn-sm">
+                    <i class="fas fa-edit"></i> EDITAR COMPRA
+                </a>
+                <button onclick="eliminar_compra('.$id_compra.');" class="btn btn-danger btn-sm">
+                    <i class="fas fa-trash-alt"></i> ELIMINAR COMPRA
+                </button>
+            ';
+            $arrCompras[$i]->options = $opciones;
         }
+        
         $arr_Respuesta['status'] = true;
         $arr_Respuesta['contenido'] = $arrCompras;
     }
+    
     echo json_encode($arr_Respuesta);
 }
 
@@ -70,6 +79,7 @@ if ($tipo == "registrar") {
     }
             echo json_encode($arr_Respuesta);
 
+}
 }
 
 if($tipo == "ver") {
@@ -107,5 +117,37 @@ if ($tipo == "actualizar") {
     }
     echo json_encode($arr_Respuesta);
 }
+
+if ($tipo == "eliminar") {
+    // Ensure the ID is properly validated and sanitized
+    $id_compra = isset($_POST['id_compra']) ? intval($_POST['id_compra']) : 0;
+    
+    // Check if the ID is valid
+    if ($id_compra <= 0) {
+        $response = array(
+            'status' => false, 
+            'message' => 'ID de compra inválido'
+        );
+    } else {
+        // Attempt to delete the purchase
+        $arr_Respuesta = $objCompras->eliminar_compra($id_compra);
+        
+        // Check the result of deletion
+        if ($arr_Respuesta) {
+            $response = array(
+                'status' => true, 
+                'message' => 'Compra eliminada exitosamente'
+            );
+        } else {
+            $response = array(
+                'status' => false, 
+                'message' => 'No se pudo eliminar la compra'
+            );
+        }
+    }
+    
+    // Send JSON response
+    echo json_encode($response);
 }
+
 ?>
