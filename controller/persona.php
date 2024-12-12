@@ -59,11 +59,15 @@ if ($tipo == "listar_personas") {
             //$opciones = '<a href="'.BASE_URL.'editarpersona/'.$id_persona.'">Editar</a><button onclick="eliminar_producto('.$id_persona.');">Eliminar</button>';
            // $arrPersona[$i]->opciones = $opciones;
            
-            $opciones = '
-            <a href="'.BASE_URL.'editarpersona/'.$id_persona.'"><i class="fas fa-edit btn btn-info btn-sm">EDITAR PERSONA</i></a>
-                 <button onclick="eliminar_persona('.$id_persona.');"class="btn btn-danger btn-sm">ELIMINAR USUARIO<i class="fas fa-trash-alt"></i></button>
-            ';
-            $arrPersona[$i]->options = $opciones;
+           $opciones = '
+           <a href="'.BASE_URL.'editarpersona/'.$id_persona.'" class="btn btn-warning btn-sm">
+               <i class="fas fa-edit"></i> EDITAR
+           </a>
+           <button onclick="eliminar_persona('.$id_persona.');" class="btn btn-danger btn-sm">
+               <i class="fas fa-trash-alt"></i> ELIMINAR
+           </button>
+       ';
+       $arrPersona[$i]->options = $opciones;
         }
         $arr_Respuesta['status'] = true;
         $arr_Respuesta['contenido'] =  $arrPersona;
@@ -160,16 +164,17 @@ if ($tipo == "actualizar") {
     echo json_encode($arr_Respuesta);
 
 
-    if ($tipo == 'eliminar') {
-        $id_personoa = $_POST['id_persona'];
-        $arr_Respuesta = $objPersona->eliminarProducto($id_persona);
-        /* print_r($arr_Respuesta); */
+    if ($tipo == "eliminar") {
+        //print_r($_POST);
+        $id_persona = $_POST['id_persona'];
+        $arr_Respuesta = $objPersona->eliminar_persona($id_persona);
+        //print_r($arr_Respuesta);
         if (empty($arr_Respuesta)) {
             $response = array('status' => false);
-        }else {
+        } else {
             $response = array('status' => true);
         }
         echo json_encode($response);
     }
-}
+}    
 ?>

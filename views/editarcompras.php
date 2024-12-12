@@ -7,7 +7,7 @@
 <h1 class="text-center mb-4 ">Registrar compras</h1>
 
     <form action="" class="from-control" id="formRegistrarCompras"  >
-        <div class="mb-3">
+    <div class="mb-3">
             <label for="id_producto">Producto: </label>
             <select type="text" name="id_producto" id="id_producto"  class="form-control" required>
             <option  class="id_proveedor" >Seleccione</option></select>
