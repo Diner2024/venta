@@ -37,12 +37,12 @@
                     <option value="">Seleccione</option>
                 </select>
             </div>
-            <button type="button" class="btn btn-success" onclick="actualizarProducto();">Actualizar</button>
+            <button type="button" class="btn btn-success" onclick="actualizar_producto();">Actualizar</button>
         </form>
     </div>
     <script src="<?php echo BASE_URL; ?>views/js/functions_producto.js"></script>
-    <script>listar_categoria();</script>
-    <script>listar_proveedores();</script>
+    <script>listar_categorias();</script>
+    <script>listarProveedor();</script>
     <script>
     //http://localhost/venta/editarproducto/1
 const id_p=<?php $pagina=explode("/", $_GET['views']); echo $pagina['1']; ?>;ver_producto(id_p); 

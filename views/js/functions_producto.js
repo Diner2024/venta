@@ -41,11 +41,11 @@ async function registrarProducto() {
     let detalle = document.querySelector('#detalle').value;
     let precio = document.querySelector('#precio').value;
     let stock = document.querySelector('#stock').value;
-    let categoria = document.querySelector('#idCategoria').value;
+    let idCategoria = document.querySelector('#idCategoria').value;
     let imagen = document.querySelector('#imagen').value;
-    let proveedor = document.querySelector('#idProveedor').value;
+    let idProveedor = document.querySelector('#idProveedor').value;
     
-    if (codigo == "" || nombre == "" || detalle == "" || precio == "" || stock == "" || categoria == "" || imagen == "" || proveedor == "") {
+    if (codigo == "" || nombre == "" || detalle == "" || precio == "" || stock == "" || idCategoria == "" || imagen == "" || idProveedor == "") {
         alert("Error, campos vacios");
         return;
     }
